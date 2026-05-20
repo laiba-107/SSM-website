@@ -10,11 +10,11 @@ export default function Home() {
       {/* ─────────────────────────────────────────────────────────────────
            HERO SECTION
            ───────────────────────────────────────────────────────────────── */}
-      <section id="top" className="relative bg-bg text-text overflow-hidden grain py-10 lg:py-12">
+      <section id="top" className="relative bg-bg text-text overflow-hidden grain pt-10 lg:pt-12 pb-4 lg:pb-6">
         <div className="absolute inset-0 pattern-ink opacity-90"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-bg/40 to-bg"></div>
 
-        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 pt-6 lg:pt-8 pb-14 lg:pb-20 z-10">
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 pt-6 lg:pt-8 pb-6 lg:pb-8 z-10">
           
           {/* CLIENT LOGO MARQUEE (Moved to top) */}
           <div className="mb-10 pb-8 border-b border-line/10 reveal-up">
@@ -89,7 +89,7 @@ export default function Home() {
 
           {/* Disciplines tags */}
           {/* Disciplines tags */}
-          <div className="mt-14 lg:mt-20 pt-6 border-t border-line/10 flex flex-wrap items-center gap-2 reveal-up visible" style={{ transitionDelay: "300ms" }}>
+          <div className="mt-10 lg:mt-14 pt-6 border-t border-line/10 flex flex-wrap items-center gap-2 reveal-up visible" style={{ transitionDelay: "300ms" }}>
             <span className="eyebrow text-mute2 mr-2">Disciplines</span>
             <span className="px-3 py-1.5 rounded-full border border-line/20 bg-surface/80 text-text/80 text-[13px] font-medium tracking-wide shadow-sm hover:border-accent hover:text-accent transition-colors cursor-default">Unarmed Security</span>
             <span className="px-3 py-1.5 rounded-full border border-line/20 bg-surface/80 text-text/80 text-[13px] font-medium tracking-wide shadow-sm hover:border-accent hover:text-accent transition-colors cursor-default">Mobile Patrol</span>
@@ -106,7 +106,7 @@ export default function Home() {
       {/* ─────────────────────────────────────────────────────────────────
            EXPLORE PRACTICE (CARD GRID)
            ───────────────────────────────────────────────────────────────── */}
-      <section id="explore" className="relative bg-bg py-16 lg:py-20 z-10 border-b border-line/15">
+      <section id="explore" className="relative bg-bg py-10 lg:py-12 z-10 border-b border-line/15">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="max-w-2xl mb-10 reveal-up">
             <h2 className="serif text-5xl lg:text-7xl leading-[0.95] text-text">
