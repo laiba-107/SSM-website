@@ -10,9 +10,9 @@ export default function Home() {
       {/* ─────────────────────────────────────────────────────────────────
            HERO SECTION
            ───────────────────────────────────────────────────────────────── */}
-      <section id="top" className="relative bg-surface text-text overflow-hidden grain py-12">
+      <section id="top" className="relative bg-bg text-text overflow-hidden grain py-12">
         <div className="absolute inset-0 pattern-ink opacity-90"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-surface/40 to-surface"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-bg/40 to-bg"></div>
 
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 pt-8 lg:pt-10 pb-14 lg:pb-20 z-10">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
@@ -84,7 +84,7 @@ export default function Home() {
       {/* ─────────────────────────────────────────────────────────────────
            CLIENT LOGO MARQUEE
            ───────────────────────────────────────────────────────────────── */}
-      <section className="bg-surface border-b border-line/15 py-10 overflow-hidden relative z-10">
+      <section className="bg-bg border-b border-line/15 py-10 overflow-hidden relative z-10">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 flex items-center gap-8 mb-7 reveal-up">
           <span className="eyebrow text-mute2">Trusted by</span>
           <span className="h-px flex-1 bg-line/15"></span>
@@ -130,7 +130,7 @@ export default function Home() {
       {/* ─────────────────────────────────────────────────────────────────
            STATS BAND
            ───────────────────────────────────────────────────────────────── */}
-      <section className="bg-surface text-text border-b border-line/15 relative z-10">
+      <section className="bg-bg text-text border-b border-line/15 relative z-10">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-16 lg:py-20 grid sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-line/10">
           <div className="py-6 sm:py-0 sm:pr-10 reveal-up">
             <div className="eyebrow text-text/55">Years of operation</div>
@@ -158,7 +158,7 @@ export default function Home() {
       {/* ─────────────────────────────────────────────────────────────────
            EXPLORE PRACTICE (CARD GRID)
            ───────────────────────────────────────────────────────────────── */}
-      <section id="explore" className="relative bg-surface py-16 lg:py-20 z-10 border-b border-line/15">
+      <section id="explore" className="relative bg-bg py-16 lg:py-20 z-10 border-b border-line/15">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="max-w-2xl mb-10 reveal-up">
             <h2 className="serif text-5xl lg:text-7xl leading-[0.95]">
