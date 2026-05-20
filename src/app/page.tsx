@@ -10,14 +10,14 @@ export default function Home() {
       {/* ─────────────────────────────────────────────────────────────────
            HERO SECTION
            ───────────────────────────────────────────────────────────────── */}
-      <section id="top" className="relative bg-bg text-text overflow-hidden grain py-12">
+      <section id="top" className="relative bg-bg text-text overflow-hidden grain py-10 lg:py-12">
         <div className="absolute inset-0 pattern-ink opacity-90"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-bg/40 to-bg"></div>
 
-        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 pt-8 lg:pt-10 pb-14 lg:pb-20 z-10">
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 pt-6 lg:pt-8 pb-14 lg:pb-20 z-10">
           
           {/* CLIENT LOGO MARQUEE (Moved to top) */}
-          <div className="mb-14 pb-8 border-b border-line/10 reveal-up">
+          <div className="mb-10 pb-8 border-b border-line/10 reveal-up">
             <div className="flex items-center gap-8 mb-7">
               <span className="eyebrow text-mute2">Trusted by</span>
               <span className="h-px flex-1 bg-line/15"></span>
@@ -89,14 +89,14 @@ export default function Home() {
 
           {/* Disciplines tags */}
           {/* Disciplines tags */}
-          <div className="mt-14 lg:mt-20 pt-6 border-t border-line/10 flex flex-wrap items-center gap-3 reveal-up visible" style={{ transitionDelay: "300ms" }}>
+          <div className="mt-14 lg:mt-20 pt-6 border-t border-line/10 flex flex-wrap items-center gap-2 reveal-up visible" style={{ transitionDelay: "300ms" }}>
             <span className="eyebrow text-mute2 mr-2">Disciplines</span>
-            <span className="px-4 py-1.5 rounded-full border border-line/20 bg-surface/80 text-text/80 text-[13px] font-medium tracking-wide shadow-sm hover:border-accent hover:text-accent transition-colors cursor-default">Unarmed Security</span>
-            <span className="px-4 py-1.5 rounded-full border border-line/20 bg-surface/80 text-text/80 text-[13px] font-medium tracking-wide shadow-sm hover:border-accent hover:text-accent transition-colors cursor-default">Mobile Patrol</span>
-            <span className="px-4 py-1.5 rounded-full border border-line/20 bg-surface/80 text-text/80 text-[13px] font-medium tracking-wide shadow-sm hover:border-accent hover:text-accent transition-colors cursor-default">Surveillance & Tracking</span>
-            <span className="px-4 py-1.5 rounded-full border border-line/20 bg-surface/80 text-text/80 text-[13px] font-medium tracking-wide shadow-sm hover:border-accent hover:text-accent transition-colors cursor-default">Facilities Management</span>
-            <span className="px-4 py-1.5 rounded-full border border-line/20 bg-surface/80 text-text/80 text-[13px] font-medium tracking-wide shadow-sm hover:border-accent hover:text-accent transition-colors cursor-default">Private Investigation</span>
-            <span className="px-4 py-1.5 rounded-full border border-line/20 bg-surface/80 text-text/80 text-[13px] font-medium tracking-wide shadow-sm hover:border-accent hover:text-accent transition-colors cursor-default">Access Control</span>
+            <span className="px-3 py-1.5 rounded-full border border-line/20 bg-surface/80 text-text/80 text-[13px] font-medium tracking-wide shadow-sm hover:border-accent hover:text-accent transition-colors cursor-default">Unarmed Security</span>
+            <span className="px-3 py-1.5 rounded-full border border-line/20 bg-surface/80 text-text/80 text-[13px] font-medium tracking-wide shadow-sm hover:border-accent hover:text-accent transition-colors cursor-default">Mobile Patrol</span>
+            <span className="px-3 py-1.5 rounded-full border border-line/20 bg-surface/80 text-text/80 text-[13px] font-medium tracking-wide shadow-sm hover:border-accent hover:text-accent transition-colors cursor-default">Surveillance & Tracking</span>
+            <span className="px-3 py-1.5 rounded-full border border-line/20 bg-surface/80 text-text/80 text-[13px] font-medium tracking-wide shadow-sm hover:border-accent hover:text-accent transition-colors cursor-default">Facilities Management</span>
+            <span className="px-3 py-1.5 rounded-full border border-line/20 bg-surface/80 text-text/80 text-[13px] font-medium tracking-wide shadow-sm hover:border-accent hover:text-accent transition-colors cursor-default">Private Investigation</span>
+            <span className="px-3 py-1.5 rounded-full border border-line/20 bg-surface/80 text-text/80 text-[13px] font-medium tracking-wide shadow-sm hover:border-accent hover:text-accent transition-colors cursor-default">Access Control</span>
           </div>
         </div>
       </section>
