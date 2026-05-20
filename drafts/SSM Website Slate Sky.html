@@ -1,0 +1,1758 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Security Systems Management Inc. — Protective Services & Facilities Management</title>
+  <meta name="description"
+    content="SSM Inc. — licensed 24/7 security guard services, mobile patrol, and facilities management for government, commercial, industrial and residential clients. Operating since 2013 across California, Texas, Virginia, Washington D.C. and Fiji." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#0F172A',
+            surface: '#1E293B',
+            surface2: '#273549',
+            text: '#F8FAFC',
+            mute: '#94A3B8',
+            mute2: '#64748B',
+            line: '#334155',
+            accent: '#0EA5E9',
+            accentL: '#38BDF8',
+            accent2: '#22C55E',
+            signal: '#22C55E',
+          },
+          fontFamily: {
+            serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+            sans: ['Geist', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+          },
+          letterSpacing: { tightest: '-0.04em' },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Geist, ui-sans-serif, system-ui, sans-serif;
+      background: #0F172A;
+      color: #F8FAFC;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .serif {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      letter-spacing: -0.025em;
+    }
+
+    .mono {
+      font-family: "JetBrains Mono", ui-monospace, monospace;
+    }
+
+    /* eyebrow label */
+    .eyebrow {
+      font-family: "JetBrains Mono", ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    /* hairline rule */
+    .rule-ink {
+      border-color: rgba(248, 250, 252, 0.10);
+    }
+
+    .rule-bone {
+      border-color: rgba(248, 250, 252, 0.12);
+    }
+
+    /* link underline accent */
+    .link-brass {
+      background-image: linear-gradient(currentColor, currentColor);
+      background-size: 100% 1px;
+      background-repeat: no-repeat;
+      background-position: 0 100%;
+    }
+
+    /* topographic dot pattern for ink sections */
+    .pattern-ink {
+      background-image:
+        radial-gradient(rgba(14, 165, 233, 0.10) 1px, transparent 1.2px),
+        radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1.2px);
+      background-size: 32px 32px, 8px 8px;
+      background-position: 0 0, 16px 16px;
+    }
+
+    .pattern-grid {
+      background-image:
+        linear-gradient(rgba(248, 250, 252, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(248, 250, 252, 0.05) 1px, transparent 1px);
+      background-size: 64px 64px;
+    }
+
+    /* subtle film grain via SVG noise for hero ink */
+    .grain::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .45;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    }
+
+    /* image placeholder stripes */
+    .placeholder-stripes {
+      background-color: #1E293B;
+      background-image: repeating-linear-gradient(135deg, rgba(248, 250, 252, 0.04) 0 1px, transparent 1px 12px);
+    }
+
+    .placeholder-stripes-dark {
+      background-color: #0F172A;
+      background-image: repeating-linear-gradient(135deg, rgba(248, 250, 252, 0.04) 0 1px, transparent 1px 12px);
+    }
+
+    /* button base */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .95rem 1.35rem;
+      font-weight: 500;
+      font-size: .92rem;
+      transition: all .25s ease;
+      border: 1px solid transparent;
+      line-height: 1;
+      border-radius: 6px;
+    }
+
+    .btn-primary {
+      background: #0EA5E9;
+      color: #0F172A;
+    }
+
+    .btn-primary:hover {
+      background: #38BDF8;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #F8FAFC;
+      border-color: rgba(248, 250, 252, 0.35);
+    }
+
+    .btn-outline:hover {
+      background: #F8FAFC;
+      color: #0F172A;
+      border-color: #F8FAFC;
+    }
+
+    .btn-brass {
+      background: #0EA5E9;
+      color: #0F172A;
+    }
+
+    .btn-brass:hover {
+      background: #38BDF8;
+    }
+
+    .btn-ghost-ink {
+      background: transparent;
+      color: #F8FAFC;
+      border-color: rgba(248, 250, 252, 0.30);
+    }
+
+    .btn-ghost-ink:hover {
+      background: rgba(248, 250, 252, 0.08);
+      color: #F8FAFC;
+      border-color: rgba(248, 250, 252, 0.6);
+    }
+
+    /* arrow link */
+    .arrow-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-weight: 500;
+    }
+
+    .arrow-link .arr {
+      transition: transform .25s ease;
+    }
+
+    .arrow-link:hover .arr {
+      transform: translateX(4px);
+    }
+
+    /* card hover */
+    .card-hover {
+      transition: border-color .25s ease, background-color .25s ease, transform .3s ease;
+    }
+
+    .card-hover:hover {
+      border-color: #0EA5E9;
+      background: #273549;
+    }
+
+    .card-hover-ink {
+      transition: border-color .25s ease, background-color .25s ease;
+    }
+
+    .card-hover-ink:hover {
+      border-color: rgba(14, 165, 233, 0.6);
+      background: #273549;
+    }
+
+    /* nav active dot */
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::before {
+      content: "";
+      position: absolute;
+      left: -12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 4px;
+      border-radius: 9999px;
+      background: #0EA5E9;
+      opacity: 0;
+      transition: opacity .2s;
+    }
+
+    .nav-link:hover::before {
+      opacity: 1;
+    }
+
+    /* marquee */
+    @keyframes scroll-x {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .marquee-track {
+      animation: scroll-x 40s linear infinite;
+    }
+
+    /* simple reveal on scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity .9s ease, transform .9s ease;
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* form */
+    .field {
+      width: 100%;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid rgba(248, 250, 252, 0.18);
+      padding: .9rem 0;
+      font-size: .95rem;
+      color: #F8FAFC;
+      outline: none;
+      transition: border-color .2s;
+    }
+
+    .field:focus {
+      border-color: #0EA5E9;
+    }
+
+    .field::placeholder {
+      color: #64748B;
+    }
+
+    .field-dark {
+      color: #F8FAFC;
+      border-color: rgba(248, 250, 252, 0.22);
+    }
+
+    .field-dark:focus {
+      border-color: #0EA5E9;
+    }
+
+    .field-dark::placeholder {
+      color: rgba(248, 250, 252, 0.45);
+    }
+
+    /* big number */
+    .megafig {
+      font-family: "Instrument Serif", Georgia, serif;
+      line-height: .92;
+      letter-spacing: -0.04em;
+    }
+
+    /* state pill on map */
+    .state-pill {
+      transition: all .25s ease;
+    }
+
+    .state-pill:hover {
+      background: #0EA5E9;
+      color: #0F172A;
+    }
+  </style>
+</head>
+
+<body class="bg-bg text-text">
+
+  <!-- ─────────────────────────────────────────────────────────────────
+     ANNOUNCEMENT BAR
+     ───────────────────────────────────────────────────────────────── -->
+  <div class="bg-bg text-text text-xs">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-10 h-10 flex items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-2">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent2 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-accent2"></span>
+          </span>
+          <span class="mono uppercase tracking-[0.18em] text-[10.5px]">24/7 Dispatch · Operational</span>
+        </span>
+        <span class="hidden md:inline opacity-50">·</span>
+        <span class="hidden md:inline opacity-70">Licensed in California, Texas, Virginia &amp; Fiji</span>
+      </div>
+      <div class="flex items-center gap-5">
+        <a href="tel:5103639189" class="hidden sm:inline-flex items-center gap-2 hover:text-accent transition-colors">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+          (510) 363-9189
+        </a>
+        <a href="mailto:ssm@securitysystemsmanagement.us"
+          class="hidden lg:inline opacity-80 hover:text-accent hover:opacity-100 transition-colors">ssm@securitysystemsmanagement.us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────────────────────────────────────────
+     NAV
+     ───────────────────────────────────────────────────────────────── -->
+  <header id="nav" class="sticky top-0 z-50 bg-bg/85 backdrop-blur border-b border-line">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-10 h-[72px] flex items-center justify-between gap-8">
+      <a href="#top" class="flex items-center gap-3 group">
+        <!-- Wordmark logo -->
+        <span class="relative inline-flex h-9 w-9 items-center justify-center">
+          <svg width="36" height="36" viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M20 2 L36 8 V20 C36 28 29 35 20 38 C11 35 4 28 4 20 V8 Z" fill="none" stroke="#F8FAFC"
+              stroke-width="1.5" />
+            <path d="M20 11 L29 14 V20 C29 24.5 25.2 28.2 20 30 C14.8 28.2 11 24.5 11 20 V14 Z" fill="#0EA5E9" />
+            <path d="M16 19 L19 22 L25 16" stroke="#F8FAFC" stroke-width="1.8" fill="none" stroke-linecap="square" />
+          </svg>
+        </span>
+        <span class="flex flex-col leading-none">
+          <span class="serif text-[22px] tracking-tight">SSM<span class="text-accent">.</span></span>
+          <span class="eyebrow text-mute2 -mt-0.5">Security Systems Management</span>
+        </span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-9">
+        <a href="#services" class="nav-link text-sm hover:text-accent transition-colors">Services</a>
+        <a href="#sectors" class="nav-link text-sm hover:text-accent transition-colors">Sectors</a>
+        <a href="#about" class="nav-link text-sm hover:text-accent transition-colors">About</a>
+        <a href="#coverage" class="nav-link text-sm hover:text-accent transition-colors">Coverage</a>
+        <a href="#academy" class="nav-link text-sm hover:text-accent transition-colors">Academy</a>
+        <a href="#careers" class="nav-link text-sm hover:text-accent transition-colors">Careers</a>
+        <a href="#government" class="nav-link text-sm hover:text-accent transition-colors">Government</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a href="#contact" class="btn btn-outline hidden md:inline-flex text-xs">Request a Proposal
+          <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M5 12h14M13 5l7 7-7 7" />
+          </svg>
+        </a>
+        <button id="menuBtn" class="lg:hidden inline-flex items-center justify-center w-10 h-10 border border-line/15"
+          aria-label="Menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 6h18M3 12h18M3 18h18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-line">
+      <div class="px-6 py-4 grid gap-2">
+        <a href="#services" class="py-2 text-sm">Services</a>
+        <a href="#sectors" class="py-2 text-sm">Sectors</a>
+        <a href="#about" class="py-2 text-sm">About</a>
+        <a href="#coverage" class="py-2 text-sm">Coverage</a>
+        <a href="#academy" class="py-2 text-sm">Academy</a>
+        <a href="#careers" class="py-2 text-sm">Careers</a>
+        <a href="#government" class="py-2 text-sm">Government</a>
+        <a href="#contact" class="btn btn-primary mt-3 justify-center">Request a Proposal</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ─────────────────────────────────────────────────────────────────
+     HERO
+     ───────────────────────────────────────────────────────────────── -->
+  <section id="top" class="relative bg-bg text-text overflow-hidden grain">
+    <div class="absolute inset-0 pattern-ink opacity-90"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-bg/40 to-bg"></div>
+
+    <div class="relative max-w-[1400px] mx-auto px-6 lg:px-10 pt-20 lg:pt-28 pb-14 lg:pb-20">
+
+      <!-- file-card style header -->
+      <div class="flex items-center justify-between mb-12 lg:mb-20">
+        <div class="flex items-center gap-4 text-text/70">
+          <span class="eyebrow">File · SSM-001</span>
+          <span class="h-px w-12 bg-bg/30"></span>
+          <span class="eyebrow text-accent">Capabilities Overview</span>
+        </div>
+        <div class="hidden md:flex items-center gap-6 text-text/60">
+          <span class="eyebrow">Est. 2013</span>
+          <span class="eyebrow">Hayward, CA · HQ</span>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-end">
+        <div class="lg:col-span-8">
+          <h1 class="serif text-[44px] sm:text-[68px] lg:text-[104px] leading-[0.95]">
+            To protect with <em class="text-accent not-italic" style="font-style:italic">courage.</em><br />
+            To serve with <em class="text-accent not-italic" style="font-style:italic">compassion.</em>
+          </h1>
+
+          <p class="mt-8 max-w-xl text-text/75 text-[17px] leading-relaxed font-light">
+            Licensed 24/7 protective services and facilities management for government, commercial, industrial and
+            residential clients. Since 2013, SSM Inc. has designed bespoke security programs that meet exact
+            specifications — without exception.
+          </p>
+
+          <div class="mt-10 flex flex-wrap items-center gap-3">
+            <a href="#contact" class="btn btn-brass">Request a Proposal
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a href="#services" class="btn btn-ghost-ink">Explore Services</a>
+            <a href="tel:5103639189"
+              class="ml-2 hidden sm:inline-flex items-center gap-3 text-text/80 hover:text-accent transition-colors">
+              <span class="mono text-xs">24/7 DISPATCH</span>
+              <span class="serif text-2xl">(510)&nbsp;363&#8209;9189</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- compact stat card -->
+        <aside class="lg:col-span-4 border border-line/15 p-6 lg:p-8 bg-surface/60 backdrop-blur-sm">
+          <div class="eyebrow text-accent mb-4">At a glance</div>
+          <dl class="grid grid-cols-2 gap-y-6 gap-x-4">
+            <div>
+              <dt class="eyebrow text-text/55">Operating since</dt>
+              <dd class="serif text-4xl mt-1">2013</dd>
+            </div>
+            <div>
+              <dt class="eyebrow text-text/55">Operational</dt>
+              <dd class="serif text-4xl mt-1">24/7</dd>
+            </div>
+            <div>
+              <dt class="eyebrow text-text/55">U.S. States</dt>
+              <dd class="serif text-4xl mt-1">04</dd>
+            </div>
+            <div>
+              <dt class="eyebrow text-text/55">Continents</dt>
+              <dd class="serif text-4xl mt-1">02</dd>
+            </div>
+          </dl>
+          <div class="mt-6 pt-5 border-t border-line/10 flex items-center gap-2 text-text/70 text-xs">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z" />
+            </svg>
+            TX DPS · VA SCC · CA BSIS · Fully bonded
+          </div>
+        </aside>
+      </div>
+
+      <!-- breadcrumb of disciplines -->
+      <div
+        class="mt-14 lg:mt-20 pt-6 border-t border-line/10 flex flex-wrap items-center gap-x-8 gap-y-3 text-text/75 text-sm">
+        <span class="eyebrow text-text/50">Disciplines</span>
+        <span>Unarmed Security</span><span class="text-text/25">/</span>
+        <span>Mobile Patrol</span><span class="text-text/25">/</span>
+        <span>Surveillance &amp; Tracking</span><span class="text-text/25">/</span>
+        <span>Facilities Management</span><span class="text-text/25">/</span>
+        <span>Private Investigation</span><span class="text-text/25">/</span>
+        <span>Access Control</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────────
+     CLIENT LOGO STRIP (marquee)
+     ───────────────────────────────────────────────────────────────── -->
+  <section class="bg-bg border-b border-line py-10 overflow-hidden">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-10 flex items-center gap-8 mb-7">
+      <span class="eyebrow text-mute2">Trusted by</span>
+      <span class="h-px flex-1 bg-line"></span>
+      <span class="eyebrow text-mute2">Selected engagements · 2013 — Present</span>
+    </div>
+    <div class="relative">
+      <div class="marquee-track flex items-center gap-16 lg:gap-24 whitespace-nowrap px-6 lg:px-10">
+        <!-- Render twice for seamless scroll -->
+        <span class="serif text-3xl text-text/70">Enterprise Rent-A-Car</span>
+        <span class="text-mute2 text-2xl">·</span>
+        <span class="mono uppercase tracking-[0.25em] text-text/70 text-sm">NOAA</span>
+        <span class="text-mute2 text-2xl">·</span>
+        <span class="serif text-3xl text-text/70">Sheraton</span>
+        <span class="text-mute2 text-2xl">·</span>
+        <span class="text-text/70 text-base font-semibold tracking-wider">ALAMEDA POINT COLLABORATIVE</span>
+        <span class="text-mute2 text-2xl">·</span>
+        <span class="serif text-3xl text-text/70">BAART Programs</span>
+        <span class="text-mute2 text-2xl">·</span>
+        <span class="mono uppercase tracking-[0.25em] text-text/70 text-sm">U.S. Dept. of Commerce</span>
+        <span class="text-mute2 text-2xl">·</span>
+        <span class="serif text-3xl text-text/70">City of Hayward</span>
+        <span class="text-mute2 text-2xl">·</span>
+
+        <!-- duplicate -->
+        <span class="serif text-3xl text-text/70">Enterprise Rent-A-Car</span>
+        <span class="text-mute2 text-2xl">·</span>
+        <span class="mono uppercase tracking-[0.25em] text-text/70 text-sm">NOAA</span>
+        <span class="text-mute2 text-2xl">·</span>
+        <span class="serif text-3xl text-text/70">Sheraton</span>
+        <span class="text-mute2 text-2xl">·</span>
+        <span class="text-text/70 text-base font-semibold tracking-wider">ALAMEDA POINT COLLABORATIVE</span>
+        <span class="text-mute2 text-2xl">·</span>
+        <span class="serif text-3xl text-text/70">BAART Programs</span>
+        <span class="text-mute2 text-2xl">·</span>
+        <span class="mono uppercase tracking-[0.25em] text-text/70 text-sm">U.S. Dept. of Commerce</span>
+        <span class="text-mute2 text-2xl">·</span>
+        <span class="serif text-3xl text-text/70">City of Hayward</span>
+        <span class="text-mute2 text-2xl">·</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────────
+     SECTION 01 — ABOUT
+     ───────────────────────────────────────────────────────────────── -->
+  <section id="about" class="relative bg-bg border-b border-line">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-16">
+
+        <div class="lg:col-span-4">
+          <div class="sticky top-28">
+            <div class="mono text-xs tracking-[0.2em] text-accent">§ 01</div>
+            <div class="eyebrow text-mute mt-2">The Company</div>
+            <h2 class="serif text-5xl lg:text-6xl mt-4 leading-[0.95]">
+              A trusted standard,<br />
+              <span class="italic text-accent">quietly held.</span>
+            </h2>
+            <p class="text-mute mt-6 max-w-sm leading-relaxed">
+              Security Systems Management Inc. is a minority-owned protective services firm headquartered in Hayward,
+              California, with active operations across the United States and the Fiji Islands.
+            </p>
+            <a href="#contact" class="arrow-link mt-8 text-text">
+              Speak with leadership
+              <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-8 lg:pl-8 lg:border-l border-line">
+          <div class="space-y-10 text-[17px] leading-[1.75] text-text/85 max-w-[58ch]">
+            <p class="serif text-[28px] leading-[1.35] text-text">
+              For more than a decade, SSM Inc. has delivered personnel security and facilities management services to
+              federal, commercial, industrial and residential clients — building custom programs to the exact
+              specifications of each engagement.
+            </p>
+            <p>
+              From the Greater Bay Area, the firm has expanded into the Washington D.C. metropolitan corridor and is
+              positioned to deliver internationally. Our diversification of service offerings, paired with a dedicated
+              management team and a documented record of excellent past performance, allows us to serve a wide range of
+              clients without sacrificing the standards that built the practice.
+            </p>
+            <p>
+              We operate 24 hours a day, seven days a week. Our officers and patrols are bonded, background-checked,
+              drug-tested, and trained at our own accredited academy — and our dispatch desk is staffed at every hour to
+              give clients a real person on the line.
+            </p>
+          </div>
+
+          <!-- inline credentials -->
+          <div class="mt-14 pt-10 border-t border-line grid sm:grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-6">
+            <div>
+              <div class="eyebrow text-mute2">California</div>
+              <div class="serif text-2xl mt-2">BSIS · Bonded</div>
+              <div class="text-xs text-mute mono mt-2">Private Patrol Operator</div>
+            </div>
+            <div>
+              <div class="eyebrow text-mute2">Texas</div>
+              <div class="serif text-2xl mt-2">DPS B12668001</div>
+              <div class="text-xs text-mute mono mt-2">Private Security Bureau</div>
+            </div>
+            <div>
+              <div class="eyebrow text-mute2">Virginia</div>
+              <div class="serif text-2xl mt-2">SCC 11839637</div>
+              <div class="text-xs text-mute mono mt-2">State Corporation Commission</div>
+            </div>
+            <div>
+              <div class="eyebrow text-mute2">International</div>
+              <div class="serif text-2xl mt-2">Fiji Islands</div>
+              <div class="text-xs text-mute mono mt-2">Active operations</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────────
+     STATS BAND
+     ───────────────────────────────────────────────────────────────── -->
+  <section class="bg-bg text-text border-b border-line/5">
+    <div
+      class="max-w-[1400px] mx-auto px-6 lg:px-10 py-20 lg:py-24 grid sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-line/10">
+      <div class="py-6 sm:py-0 sm:pr-10">
+        <div class="eyebrow text-text/55">Years of operation</div>
+        <div class="megafig text-[88px] lg:text-[112px] mt-3">12<span class="text-accent">+</span></div>
+        <p class="text-text/60 text-sm mt-1">Continuous service since 2013.</p>
+      </div>
+      <div class="py-6 sm:py-0 sm:px-10">
+        <div class="eyebrow text-text/55">Dispatch</div>
+        <div class="megafig text-[88px] lg:text-[112px] mt-3">24/7</div>
+        <p class="text-text/60 text-sm mt-1">Radio check every 30 minutes.</p>
+      </div>
+      <div class="py-6 sm:py-0 sm:px-10">
+        <div class="eyebrow text-text/55">Languages spoken</div>
+        <div class="megafig text-[88px] lg:text-[112px] mt-3">06</div>
+        <p class="text-text/60 text-sm mt-1">Bilingual officers on staff.</p>
+      </div>
+      <div class="py-6 sm:py-0 sm:pl-10">
+        <div class="eyebrow text-text/55">Best rate</div>
+        <div class="megafig text-[88px] lg:text-[112px] mt-3">100<span class="text-accent">%</span></div>
+        <p class="text-text/60 text-sm mt-1">Best-rate guarantee on contracts.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────────
+     SECTION 02 — SERVICES
+     ───────────────────────────────────────────────────────────────── -->
+  <section id="services" class="relative bg-surface border-b border-line">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
+
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16">
+        <div class="max-w-2xl">
+          <div class="mono text-xs tracking-[0.2em] text-accent">§ 02</div>
+          <div class="eyebrow text-mute mt-2">Services</div>
+          <h2 class="serif text-5xl lg:text-7xl mt-4 leading-[0.95]">
+            A full-service protective<br />
+            and facilities <span class="italic">practice.</span>
+          </h2>
+        </div>
+        <p class="text-mute max-w-sm leading-relaxed">
+          Each engagement begins with a free site assessment and ends with a custom program designed to your
+          specifications — never an off-the-shelf retainer.
+        </p>
+      </div>
+
+      <!-- Services grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 border-l border-t border-line">
+        <!-- card template -->
+        <article class="card-hover bg-surface border-r border-b border-line p-8 lg:p-10 relative group">
+          <div class="flex items-start justify-between">
+            <div class="mono text-xs text-accent">01</div>
+            <svg class="w-6 h-6 text-mute2 group-hover:text-accent transition-colors" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.4">
+              <path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z" />
+              <path d="M9 12l2 2 4-4" />
+            </svg>
+          </div>
+          <h3 class="serif text-3xl mt-10">Unarmed Officers</h3>
+          <p class="text-mute text-sm mt-3 leading-relaxed">Uniformed and undercover security officers across
+            government, commercial, industrial and residential sites. Bonded, background-checked and academy-trained.
+          </p>
+          <div class="mt-8 pt-5 border-t border-line flex items-center justify-between text-xs">
+            <span class="mono text-mute">24/7 · Hourly — Yearly</span>
+            <span class="arrow-link text-text">Detail
+              <svg class="arr" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <article class="card-hover bg-surface border-r border-b border-line p-8 lg:p-10 group">
+          <div class="flex items-start justify-between">
+            <div class="mono text-xs text-accent">02</div>
+            <svg class="w-6 h-6 text-mute2 group-hover:text-accent transition-colors" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.4">
+              <circle cx="7" cy="17" r="2" />
+              <circle cx="17" cy="17" r="2" />
+              <path d="M5 17H3v-6l2-5h9l4 5h2v6h-2" />
+              <path d="M14 6v5" />
+            </svg>
+          </div>
+          <h3 class="serif text-3xl mt-10">Mobile Patrol</h3>
+          <p class="text-mute text-sm mt-3 leading-relaxed">Marked-vehicle patrol with GPS tracking, Detex check-in
+            technology, and incident reporting. Scheduled and on-demand routes.</p>
+          <div class="mt-8 pt-5 border-t border-line flex items-center justify-between text-xs">
+            <span class="mono text-mute">GPS · Detex · 2-Way Radio</span>
+            <span class="arrow-link text-text">Detail
+              <svg class="arr" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <article class="card-hover bg-surface border-r border-b border-line p-8 lg:p-10 group">
+          <div class="flex items-start justify-between">
+            <div class="mono text-xs text-accent">03</div>
+            <svg class="w-6 h-6 text-mute2 group-hover:text-accent transition-colors" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.4">
+              <circle cx="12" cy="12" r="3" />
+              <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z" />
+            </svg>
+          </div>
+          <h3 class="serif text-3xl mt-10">Surveillance &amp; Tracking</h3>
+          <p class="text-mute text-sm mt-3 leading-relaxed">Video surveillance specialists, Raptor &amp; Lobby Guard
+            visitor management, and full-perimeter monitoring — installed, supervised, audited.</p>
+          <div class="mt-8 pt-5 border-t border-line flex items-center justify-between text-xs">
+            <span class="mono text-mute">Raptor · LobbyGuard · CCTV</span>
+            <span class="arrow-link text-text">Detail
+              <svg class="arr" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <article class="card-hover bg-surface border-r border-b border-line p-8 lg:p-10 group">
+          <div class="flex items-start justify-between">
+            <div class="mono text-xs text-accent">04</div>
+            <svg class="w-6 h-6 text-mute2 group-hover:text-accent transition-colors" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.4">
+              <path d="M3 21h18M5 21V7l7-4 7 4v14" />
+              <path d="M9 9h2M9 13h2M9 17h2M13 9h2M13 13h2M13 17h2" />
+            </svg>
+          </div>
+          <h3 class="serif text-3xl mt-10">Facilities Management</h3>
+          <p class="text-mute text-sm mt-3 leading-relaxed">Database and technology resources, vehicle support,
+            uniforms, and on-site supervision. End-to-end programs that integrate cleanly with existing operations.</p>
+          <div class="mt-8 pt-5 border-t border-line flex items-center justify-between text-xs">
+            <span class="mono text-mute">Custom integrations</span>
+            <span class="arrow-link text-text">Detail
+              <svg class="arr" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <article class="card-hover bg-surface border-r border-b border-line p-8 lg:p-10 group">
+          <div class="flex items-start justify-between">
+            <div class="mono text-xs text-accent">05</div>
+            <svg class="w-6 h-6 text-mute2 group-hover:text-accent transition-colors" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.4">
+              <circle cx="11" cy="11" r="7" />
+              <path d="m21 21-4.3-4.3" />
+              <path d="m11 8 1.5 1.5L11 11" />
+            </svg>
+          </div>
+          <h3 class="serif text-3xl mt-10">Private Investigation</h3>
+          <p class="text-mute text-sm mt-3 leading-relaxed">Employment screening, internal investigations and discreet
+            surveillance for HR, legal and operational matters. Reports delivered to brief.</p>
+          <div class="mt-8 pt-5 border-t border-line flex items-center justify-between text-xs">
+            <span class="mono text-mute">Confidential · Documented</span>
+            <span class="arrow-link text-text">Detail
+              <svg class="arr" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <article class="card-hover bg-surface border-r border-b border-line p-8 lg:p-10 group">
+          <div class="flex items-start justify-between">
+            <div class="mono text-xs text-accent">06</div>
+            <svg class="w-6 h-6 text-mute2 group-hover:text-accent transition-colors" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.4">
+              <circle cx="12" cy="8" r="4" />
+              <path d="M4 21v-1a8 8 0 0 1 16 0v1" />
+            </svg>
+          </div>
+          <h3 class="serif text-3xl mt-10">Access &amp; Health Control</h3>
+          <p class="text-mute text-sm mt-3 leading-relaxed">Visitor screening, temperature checks, mask &amp; occupancy
+            enforcement, badge issue. Designed to meet federal and state safety regulations.</p>
+          <div class="mt-8 pt-5 border-t border-line flex items-center justify-between text-xs">
+            <span class="mono text-mute">Compliance ready</span>
+            <span class="arrow-link text-text">Detail
+              <svg class="arr" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </span>
+          </div>
+        </article>
+      </div>
+
+      <!-- Capabilities tag list -->
+      <div class="mt-16 lg:mt-20 grid lg:grid-cols-12 gap-10">
+        <div class="lg:col-span-3">
+          <div class="eyebrow text-mute">Comprehensive Capabilities</div>
+          <h3 class="serif text-3xl mt-3 leading-tight">Every discipline,<br />under one roof.</h3>
+        </div>
+        <div class="lg:col-span-9 flex flex-wrap gap-2">
+          <!-- tags -->
+          <span class="border border-line px-3.5 py-2 text-sm hover:border-line transition-colors">Unarmed Security
+            Officers</span>
+          <span class="border border-line px-3.5 py-2 text-sm hover:border-line transition-colors">Undercover
+            Security</span>
+          <span class="border border-line px-3.5 py-2 text-sm hover:border-line transition-colors">Bodyguard
+            Services</span>
+          <span class="border border-line px-3.5 py-2 text-sm hover:border-line transition-colors">Patrol
+            Services</span>
+          <span class="border border-line px-3.5 py-2 text-sm hover:border-line transition-colors">Bilingual
+            Guards</span>
+          <span class="border border-line px-3.5 py-2 text-sm hover:border-line transition-colors">Uniformed
+            Officers</span>
+          <span class="border border-line px-3.5 py-2 text-sm hover:border-line transition-colors">Accredited
+            Academy</span>
+          <span class="border border-line px-3.5 py-2 text-sm hover:border-line transition-colors">Hourly — Yearly
+            Contracts</span>
+          <span class="border border-line px-3.5 py-2 text-sm hover:border-line transition-colors">2-Way Radios</span>
+          <span class="border border-line px-3.5 py-2 text-sm hover:border-line transition-colors">Best Rate
+            Guarantee</span>
+          <span class="border border-line px-3.5 py-2 text-sm hover:border-line transition-colors">Private
+            Investigation</span>
+          <span class="border border-line px-3.5 py-2 text-sm hover:border-line transition-colors">Surveillance &amp;
+            Tracking</span>
+          <span class="border border-line px-3.5 py-2 text-sm hover:border-line transition-colors">Employment
+            Screening</span>
+          <span class="border border-line px-3.5 py-2 text-sm hover:border-line transition-colors">Drug Testing</span>
+          <span class="border border-line px-3.5 py-2 text-sm hover:border-line transition-colors">CCTV
+            Specialists</span>
+          <span class="border border-line px-3.5 py-2 text-sm hover:border-line transition-colors">Fully Licensed &amp;
+            Insured</span>
+          <span class="border border-line px-3.5 py-2 text-sm hover:border-line transition-colors">Detex
+            Technology</span>
+          <span class="border border-line px-3.5 py-2 text-sm hover:border-line transition-colors">Raptor / Lobby
+            Guard</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────────
+     SECTION 03 — SECTORS
+     ───────────────────────────────────────────────────────────────── -->
+  <section id="sectors" class="relative bg-bg border-b border-line">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
+
+      <div class="grid lg:grid-cols-12 gap-10 mb-16">
+        <div class="lg:col-span-6">
+          <div class="mono text-xs tracking-[0.2em] text-accent">§ 03</div>
+          <div class="eyebrow text-mute mt-2">Sectors</div>
+          <h2 class="serif text-5xl lg:text-7xl mt-4 leading-[0.95]">
+            Four environments.<br />
+            One <span class="italic">standard.</span>
+          </h2>
+        </div>
+        <div class="lg:col-span-5 lg:col-start-8 text-mute leading-relaxed self-end">
+          Each sector carries its own choreography of risk. We design the program — staffing pattern, post orders,
+          escalation tree — so it fits the environment, not the other way around.
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-px bg-line border border-line">
+
+        <!-- Government -->
+        <article class="bg-bg p-8 lg:p-12 group">
+          <div class="flex items-center justify-between mb-8">
+            <span class="mono text-xs text-accent">/ 01 — GOV</span>
+            <span class="eyebrow text-mute">Federal · State · Municipal</span>
+          </div>
+          <div class="placeholder-stripes aspect-[16/9] flex items-center justify-center mb-8 relative overflow-hidden">
+            <span class="mono text-[10px] text-mute uppercase tracking-widest absolute top-3 left-3">image · government
+              facility</span>
+            <svg class="w-20 h-20 text-text/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+              <path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3" />
+            </svg>
+          </div>
+          <h3 class="serif text-4xl">Government</h3>
+          <p class="text-mute mt-3 leading-relaxed">Cleared officers, RFP-ready capability statements and SCC-registered
+            operations. We currently work with federal departments including NOAA and the U.S. Department of Commerce.
+          </p>
+          <a href="#government" class="arrow-link mt-6 text-text">View capability documents
+            <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M5 12h14M13 5l7 7-7 7" />
+            </svg>
+          </a>
+        </article>
+
+        <!-- Commercial -->
+        <article class="bg-bg p-8 lg:p-12 group">
+          <div class="flex items-center justify-between mb-8">
+            <span class="mono text-xs text-accent">/ 02 — COM</span>
+            <span class="eyebrow text-mute">Offices · Hospitality · Retail</span>
+          </div>
+          <div class="placeholder-stripes aspect-[16/9] flex items-center justify-center mb-8 relative overflow-hidden">
+            <span class="mono text-[10px] text-mute uppercase tracking-widest absolute top-3 left-3">image · hospitality
+              lobby</span>
+            <svg class="w-20 h-20 text-text/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+              <path d="M3 21V8l9-5 9 5v13" />
+              <path d="M9 21V12h6v9" />
+            </svg>
+          </div>
+          <h3 class="serif text-4xl">Commercial</h3>
+          <p class="text-mute mt-3 leading-relaxed">Concierge security, evening lock-up, event coverage. We serve
+            hospitality clients such as Sheraton and operational fleets such as Enterprise Rent-A-Car.</p>
+          <a href="#contact" class="arrow-link mt-6 text-text">Request commercial proposal
+            <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M5 12h14M13 5l7 7-7 7" />
+            </svg>
+          </a>
+        </article>
+
+        <!-- Industrial -->
+        <article class="bg-bg p-8 lg:p-12 group">
+          <div class="flex items-center justify-between mb-8">
+            <span class="mono text-xs text-accent">/ 03 — IND</span>
+            <span class="eyebrow text-mute">Logistics · Manufacturing · Yards</span>
+          </div>
+          <div class="placeholder-stripes aspect-[16/9] flex items-center justify-center mb-8 relative overflow-hidden">
+            <span class="mono text-[10px] text-mute uppercase tracking-widest absolute top-3 left-3">image · perimeter
+              patrol</span>
+            <svg class="w-20 h-20 text-text/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+              <path d="M2 20h20M4 20V8l5 3V8l5 3V8l5 3v9" />
+            </svg>
+          </div>
+          <h3 class="serif text-4xl">Industrial</h3>
+          <p class="text-mute mt-3 leading-relaxed">Perimeter and yard patrol, after-hours coverage, controlled access.
+            Detex check-points and 30-minute radio audits — documented incident reports the next morning.</p>
+          <a href="#contact" class="arrow-link mt-6 text-text">Discuss site requirements
+            <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M5 12h14M13 5l7 7-7 7" />
+            </svg>
+          </a>
+        </article>
+
+        <!-- Residential -->
+        <article class="bg-bg p-8 lg:p-12 group">
+          <div class="flex items-center justify-between mb-8">
+            <span class="mono text-xs text-accent">/ 04 — RES</span>
+            <span class="eyebrow text-mute">HOAs · Multi-family · Community</span>
+          </div>
+          <div class="placeholder-stripes aspect-[16/9] flex items-center justify-center mb-8 relative overflow-hidden">
+            <span class="mono text-[10px] text-mute uppercase tracking-widest absolute top-3 left-3">image · community
+              gatehouse</span>
+            <svg class="w-20 h-20 text-text/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+              <path d="M3 12 12 3l9 9" />
+              <path d="M5 10v10h14V10" />
+              <path d="M10 20v-6h4v6" />
+            </svg>
+          </div>
+          <h3 class="serif text-4xl">Residential</h3>
+          <p class="text-mute mt-3 leading-relaxed">Gatehouse staffing, patrol routes and resident-facing service for
+            HOAs and community developments including Alameda Point Collaborative and BAART Programs.</p>
+          <a href="#contact" class="arrow-link mt-6 text-text">Plan community coverage
+            <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M5 12h14M13 5l7 7-7 7" />
+            </svg>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────────
+     SECTION 04 — WHY SSM (Pillars)
+     ───────────────────────────────────────────────────────────────── -->
+  <section class="relative bg-surface border-b border-line">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
+
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16">
+        <div class="max-w-2xl">
+          <div class="mono text-xs tracking-[0.2em] text-accent">§ 04</div>
+          <div class="eyebrow text-mute mt-2">Why SSM</div>
+          <h2 class="serif text-5xl lg:text-7xl mt-4 leading-[0.95]">
+            Built for the way<br />
+            serious clients <span class="italic">buy security.</span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-line">
+        <div class="bg-surface p-8 lg:p-10">
+          <div class="serif text-6xl text-accent">01</div>
+          <h3 class="serif text-2xl mt-6">Licensed &amp; Bonded</h3>
+          <p class="text-mute text-sm mt-2 leading-relaxed">Background-verified officers and a corporate registry across
+            four jurisdictions. Clients can audit our license numbers directly with the issuing authorities.</p>
+        </div>
+        <div class="bg-surface p-8 lg:p-10">
+          <div class="serif text-6xl text-accent">02</div>
+          <h3 class="serif text-2xl mt-6">Academy-Trained</h3>
+          <p class="text-mute text-sm mt-2 leading-relaxed">We do not outsource training. SSM Academy delivers Guard
+            Card certification, employment readiness and ongoing post-orders refreshers in-house.</p>
+        </div>
+        <div class="bg-surface p-8 lg:p-10">
+          <div class="serif text-6xl text-accent">03</div>
+          <h3 class="serif text-2xl mt-6">24/7 Real Dispatch</h3>
+          <p class="text-mute text-sm mt-2 leading-relaxed">A staffed dispatch desk, not an answering service. Radio
+            check every thirty minutes — or to the cadence your post orders require.</p>
+        </div>
+        <div class="bg-surface p-8 lg:p-10">
+          <div class="serif text-6xl text-accent">04</div>
+          <h3 class="serif text-2xl mt-6">Best-Rate Guarantee</h3>
+          <p class="text-mute text-sm mt-2 leading-relaxed">Hourly, daily, weekly, monthly or yearly contracts — at
+            competitive rates we will match. No long-term lock-in to begin a program.</p>
+        </div>
+      </div>
+
+      <!-- Mission quote (light variant) -->
+      <div class="mt-20 lg:mt-28 grid lg:grid-cols-12 gap-10 items-start">
+        <div class="lg:col-span-2">
+          <div class="eyebrow text-mute">Our Mission</div>
+        </div>
+        <blockquote class="lg:col-span-10">
+          <p class="serif text-4xl lg:text-6xl leading-[1.05]">
+            “We empower our people to <span class="italic text-accent">protect with courage</span> and <span
+              class="italic text-accent">serve with compassion.</span> The standard meets — and surpasses — what each
+            client expects, on every shift, at every post.”
+          </p>
+          <footer class="mt-10 flex items-center gap-4">
+            <span class="h-px w-12 bg-bg"></span>
+            <span class="mono text-xs uppercase tracking-[0.18em] text-mute">SSM Inc. Leadership</span>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────────
+     SECTION 05 — COVERAGE
+     ───────────────────────────────────────────────────────────────── -->
+  <section id="coverage" class="relative bg-bg text-text overflow-hidden">
+    <div class="absolute inset-0 pattern-ink opacity-70"></div>
+    <div class="relative max-w-[1400px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
+
+      <div class="grid lg:grid-cols-12 gap-10 mb-16">
+        <div class="lg:col-span-6">
+          <div class="mono text-xs tracking-[0.2em] text-accent">§ 05</div>
+          <div class="eyebrow text-text/55 mt-2">Coverage</div>
+          <h2 class="serif text-5xl lg:text-7xl mt-4 leading-[0.95] text-text">
+            Local execution.<br />
+            International <span class="italic">reach.</span>
+          </h2>
+        </div>
+        <p class="lg:col-span-5 lg:col-start-8 text-text/70 leading-relaxed self-end">
+          Headquartered in the Bay Area, expanding through the Washington D.C. metropolitan corridor, with active
+          operations in the Fiji Islands. Each region runs on the same playbook.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-10">
+        <!-- Stylized US map placeholder -->
+        <div class="lg:col-span-7 border border-line/15 p-6 lg:p-8 bg-surface/50">
+          <div class="flex items-center justify-between mb-6">
+            <span class="eyebrow text-text/55">North American Operations</span>
+            <span class="mono text-xs text-accent">04 STATES · 12+ POSTS</span>
+          </div>
+          <!-- Schematic US map: hexagonal grid -->
+          <div class="relative aspect-[16/9]">
+            <svg viewBox="0 0 800 450" class="w-full h-full">
+              <!-- background grid -->
+              <defs>
+                <pattern id="bggrid" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(248,250,252,0.06)" stroke-width="0.5" />
+                </pattern>
+                <radialGradient id="dot-grad" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#0EA5E9" stop-opacity="0.9" />
+                  <stop offset="100%" stop-color="#0EA5E9" stop-opacity="0" />
+                </radialGradient>
+              </defs>
+              <rect width="800" height="450" fill="url(#bggrid)" />
+
+              <!-- abstracted US outline -->
+              <path
+                d="M60 170 L120 130 L200 120 L300 130 L420 120 L530 130 L640 150 L720 180 L730 240 L700 290 L650 320 L600 330 L520 320 L440 340 L380 360 L310 350 L240 340 L180 320 L140 290 L100 250 L70 210 Z"
+                fill="none" stroke="rgba(248,250,252,0.22)" stroke-width="1.2" />
+
+              <!-- California (Hayward, HQ) -->
+              <g transform="translate(110,250)">
+                <circle r="36" fill="url(#dot-grad)" />
+                <circle r="6" fill="#0EA5E9" />
+                <circle r="6" fill="none" stroke="#0EA5E9" stroke-width="1">
+                  <animate attributeName="r" from="6" to="22" dur="2.4s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" from="1" to="0" dur="2.4s" repeatCount="indefinite" />
+                </circle>
+                <text x="14" y="-6" fill="#F8FAFC" font-family="JetBrains Mono" font-size="10"
+                  letter-spacing="2">HAYWARD · HQ</text>
+                <text x="14" y="8" fill="#0EA5E9" font-family="Instrument Serif" font-size="20">California</text>
+              </g>
+
+              <!-- Texas -->
+              <g transform="translate(380,300)">
+                <circle r="5" fill="#F8FAFC" />
+                <text x="12" y="-2" fill="#F8FAFC" font-family="JetBrains Mono" font-size="10" letter-spacing="2">DPS
+                  B12668001</text>
+                <text x="12" y="12" fill="#F8FAFC" font-family="Instrument Serif" font-size="20">Texas</text>
+              </g>
+
+              <!-- Virginia -->
+              <g transform="translate(605,205)">
+                <circle r="5" fill="#F8FAFC" />
+                <text x="12" y="-2" fill="#F8FAFC" font-family="JetBrains Mono" font-size="10" letter-spacing="2">SCC
+                  11839637</text>
+                <text x="12" y="12" fill="#F8FAFC" font-family="Instrument Serif" font-size="20">Virginia</text>
+              </g>
+
+              <!-- Washington DC -->
+              <g transform="translate(615,193)">
+                <circle r="3" fill="#0EA5E9" />
+                <text x="-2" y="-10" fill="#0EA5E9" font-family="JetBrains Mono" font-size="8"
+                  letter-spacing="1">WASHINGTON D.C.</text>
+              </g>
+
+              <!-- compass / scale -->
+              <g transform="translate(60,400)" fill="rgba(248,250,252,0.5)" font-family="JetBrains Mono" font-size="9">
+                <text>N ↑ &nbsp; SCHEMATIC · NOT TO SCALE</text>
+              </g>
+            </svg>
+          </div>
+          <div class="mt-6 pt-5 border-t border-line/10 flex flex-wrap items-center gap-x-8 gap-y-3 text-xs">
+            <span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-accent"></span> <span
+                class="text-text/75">HQ &amp; Operations</span></span>
+            <span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-bg"></span> <span
+                class="text-text/75">Licensed Operations</span></span>
+            <span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full border border-accent"></span>
+              <span class="text-text/75">Active Expansion</span></span>
+          </div>
+        </div>
+
+        <!-- Region list -->
+        <div class="lg:col-span-5 grid gap-px bg-bg/10 border border-line/15">
+          <div
+            class="bg-surface p-6 lg:p-7 flex items-start justify-between gap-6 card-hover-ink border border-transparent">
+            <div class="flex-1 min-w-0">
+              <div class="eyebrow text-accent">Headquarters</div>
+              <div class="serif text-3xl mt-2">Hayward, California</div>
+              <div class="text-text/70 text-sm mt-2 mono">350 Winton Avenue · 94544</div>
+            </div>
+            <div class="serif text-text/30 text-5xl leading-none">01</div>
+          </div>
+          <div
+            class="bg-surface p-6 lg:p-7 flex items-start justify-between gap-6 card-hover-ink border border-transparent">
+            <div class="flex-1 min-w-0">
+              <div class="eyebrow text-accent">East Coast</div>
+              <div class="serif text-3xl mt-2">Washington D.C.</div>
+              <div class="text-text/70 text-sm mt-2 mono">Metropolitan corridor</div>
+            </div>
+            <div class="serif text-text/30 text-5xl leading-none">02</div>
+          </div>
+          <div
+            class="bg-surface p-6 lg:p-7 flex items-start justify-between gap-6 card-hover-ink border border-transparent">
+            <div class="flex-1 min-w-0">
+              <div class="eyebrow text-accent">Southern U.S.</div>
+              <div class="serif text-3xl mt-2">Texas &amp; Virginia</div>
+              <div class="text-text/70 text-sm mt-2 mono">DPS · SCC registered</div>
+            </div>
+            <div class="serif text-text/30 text-5xl leading-none">03</div>
+          </div>
+          <div
+            class="bg-surface p-6 lg:p-7 flex items-start justify-between gap-6 card-hover-ink border border-transparent">
+            <div class="flex-1 min-w-0">
+              <div class="eyebrow text-accent">International</div>
+              <div class="serif text-3xl mt-2">Fiji Islands</div>
+              <div class="text-text/70 text-sm mt-2 mono">Active operations · Pacific</div>
+            </div>
+            <div class="serif text-text/30 text-5xl leading-none">04</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────────
+     SECTION 06 — ACADEMY (split feature)
+     ───────────────────────────────────────────────────────────────── -->
+  <section id="academy" class="relative bg-bg border-b border-line">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
+
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-16">
+        <div class="lg:col-span-6">
+          <div class="placeholder-stripes aspect-[4/5] relative overflow-hidden">
+            <span class="mono text-[10px] text-mute uppercase tracking-widest absolute top-4 left-4">image · SSM Academy
+              classroom</span>
+            <span class="mono text-[10px] text-mute uppercase tracking-widest absolute bottom-4 right-4">24301 Southland
+              Dr · Hayward</span>
+            <!-- decorative monogram -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="serif text-[260px] text-text/15 leading-none">A</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <div class="mono text-xs tracking-[0.2em] text-accent">§ 06</div>
+          <div class="eyebrow text-mute mt-2">SSM Academy</div>
+          <h2 class="serif text-5xl lg:text-7xl mt-4 leading-[0.95]">
+            A quick route<br />
+            <span class="italic">to success.</span>
+          </h2>
+          <p class="text-mute mt-6 max-w-md leading-relaxed">
+            Our accredited Hayward campus runs Guard Card certification, employment readiness workshops and DOJ/FBI
+            livescan — capped at eight students per class for genuine instruction. Pre-payment holds your seat.
+          </p>
+
+          <!-- Pricing list -->
+          <div class="mt-12 border-t border-line">
+            <div class="grid grid-cols-[24px_1fr_auto] gap-x-6 items-baseline py-6 border-b border-line">
+              <span class="mono text-xs text-accent">A</span>
+              <div>
+                <div class="serif text-2xl">Guard Card Training</div>
+                <div class="text-mute text-sm mt-1">Two classes in one day — full certification track</div>
+              </div>
+              <div class="serif text-2xl">$97</div>
+            </div>
+            <div class="grid grid-cols-[24px_1fr_auto] gap-x-6 items-baseline py-6 border-b border-line">
+              <span class="mono text-xs text-accent">B</span>
+              <div>
+                <div class="serif text-2xl">Employment Readiness</div>
+                <div class="text-mute text-sm mt-1">Resume, interview practice, post-orders briefing</div>
+              </div>
+              <div class="serif text-2xl">$50</div>
+            </div>
+            <div class="grid grid-cols-[24px_1fr_auto] gap-x-6 items-baseline py-6 border-b border-line">
+              <span class="mono text-xs text-accent">C</span>
+              <div>
+                <div class="serif text-2xl">Livescan &amp; Background</div>
+                <div class="text-mute text-sm mt-1">DOJ ($32) · FBI ($19) · Fingerprinting ($35)</div>
+              </div>
+              <div class="serif text-2xl">$86</div>
+            </div>
+            <div class="grid grid-cols-[24px_1fr_auto] gap-x-6 items-baseline py-6 border-b border-line">
+              <span class="mono text-xs text-accent">D</span>
+              <div>
+                <div class="serif text-2xl">Processing &amp; Mailing</div>
+                <div class="text-mute text-sm mt-1">Full credential package, prepared and sent for you</div>
+              </div>
+              <div class="serif text-2xl">$25</div>
+            </div>
+          </div>
+
+          <div class="mt-10 flex flex-wrap items-center gap-3">
+            <a href="#contact" class="btn btn-primary">Reserve a Seat
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a href="#careers" class="btn btn-outline">View Open Roles</a>
+          </div>
+          <p class="text-xs text-mute mt-6 max-w-md">10% discount for new hires on a one-year contract with SSM, using
+            pay-as-you-go repayment. Placement is subject to post availability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────────
+     SECTION 07 — CAREERS
+     ───────────────────────────────────────────────────────────────── -->
+  <section id="careers" class="relative bg-surface border-b border-line">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-16">
+        <div class="lg:col-span-5">
+          <div class="mono text-xs tracking-[0.2em] text-accent">§ 07</div>
+          <div class="eyebrow text-mute mt-2">Careers</div>
+          <h2 class="serif text-5xl lg:text-7xl mt-4 leading-[0.95]">
+            Work that <span class="italic">matters.</span>
+          </h2>
+          <p class="text-mute mt-6 max-w-md leading-relaxed">
+            We hire steady, attentive people and invest in their training. Bring the basics; we will hand you the post
+            orders, the radio, the uniform — and a real career path.
+          </p>
+
+          <div class="mt-10 flex items-center gap-3">
+            <a href="#contact" class="btn btn-primary">Apply Now
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="mt-14 pt-8 border-t border-line grid grid-cols-2 gap-6">
+            <div>
+              <div class="serif text-4xl">10+</div>
+              <div class="text-xs mono uppercase tracking-widest text-mute mt-1">Open positions</div>
+            </div>
+            <div>
+              <div class="serif text-4xl">6</div>
+              <div class="text-xs mono uppercase tracking-widest text-mute mt-1">Role types</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="eyebrow text-mute mb-4">Requirements</div>
+          <ul class="border-t border-line">
+            <li class="flex items-start justify-between py-4 border-b border-line gap-6">
+              <span class="text-text">Valid registration guard card</span>
+              <span class="mono text-xs text-mute">required</span>
+            </li>
+            <li class="flex items-start justify-between py-4 border-b border-line gap-6">
+              <span class="text-text">Minimum 18 years of age</span>
+              <span class="mono text-xs text-mute">required</span>
+            </li>
+            <li class="flex items-start justify-between py-4 border-b border-line gap-6">
+              <span class="text-text">Clean employment background history</span>
+              <span class="mono text-xs text-mute">required</span>
+            </li>
+            <li class="flex items-start justify-between py-4 border-b border-line gap-6">
+              <span class="text-text">Pre-employment screening &amp; drug test</span>
+              <span class="mono text-xs text-mute">required</span>
+            </li>
+            <li class="flex items-start justify-between py-4 border-b border-line gap-6">
+              <span class="text-text">GED or high school diploma</span>
+              <span class="mono text-xs text-mute">required</span>
+            </li>
+            <li class="flex items-start justify-between py-4 border-b border-line gap-6">
+              <span class="text-text">U.S. work authorization documents</span>
+              <span class="mono text-xs text-mute">required</span>
+            </li>
+            <li class="flex items-start justify-between py-4 border-b border-line gap-6">
+              <span class="text-text">Pass the SSM security training exam</span>
+              <span class="mono text-xs text-mute">on-site</span>
+            </li>
+            <li class="flex items-start justify-between py-4 border-b border-line gap-6">
+              <span class="text-text">Criminal background check</span>
+              <span class="mono text-xs text-mute">required</span>
+            </li>
+            <li class="flex items-start justify-between py-4 border-b border-line gap-6">
+              <span class="text-text">DMV record (for patrol positions)</span>
+              <span class="mono text-xs text-mute">role-specific</span>
+            </li>
+            <li class="flex items-start justify-between py-4 border-b border-line gap-6">
+              <span class="text-text">Interview with SSM hiring manager</span>
+              <span class="mono text-xs text-mute">final stage</span>
+            </li>
+          </ul>
+
+          <div class="mt-10 grid sm:grid-cols-3 gap-4">
+            <div class="border border-line p-5 card-hover">
+              <div class="mono text-xs text-accent">UNARMED</div>
+              <div class="serif text-2xl mt-2">Officer</div>
+              <div class="text-mute text-xs mt-2">Full-time · Part-time</div>
+            </div>
+            <div class="border border-line p-5 card-hover">
+              <div class="mono text-xs text-accent">FLEX</div>
+              <div class="serif text-2xl mt-2">Officer</div>
+              <div class="text-mute text-xs mt-2">Variable shift</div>
+            </div>
+            <div class="border border-line p-5 card-hover">
+              <div class="mono text-xs text-accent">SUPERVISOR</div>
+              <div class="serif text-2xl mt-2">Day / Night</div>
+              <div class="text-mute text-xs mt-2">Weekday &amp; Weekend</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────────
+     SECTION 08 — GOVERNMENT / DOWNLOADS
+     ───────────────────────────────────────────────────────────────── -->
+  <section id="government" class="relative bg-bg border-b border-line">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-16">
+        <div class="lg:col-span-5">
+          <div class="mono text-xs tracking-[0.2em] text-accent">§ 08</div>
+          <div class="eyebrow text-mute mt-2">Government</div>
+          <h2 class="serif text-5xl lg:text-7xl mt-4 leading-[0.95]">
+            Capability statements.<br />
+            <span class="italic">On the record.</span>
+          </h2>
+          <p class="text-mute mt-6 max-w-md leading-relaxed">
+            Documents prepared for federal, state and municipal contracting officers. Verify our SCC registration
+            directly at the Virginia Commonwealth registry.
+          </p>
+          <div class="mt-8 mono text-xs text-mute space-y-1">
+            <div><span class="text-text">Entity</span> &nbsp;·&nbsp; Security Systems Management Inc.</div>
+            <div><span class="text-text">SCC ID</span> &nbsp;·&nbsp; 11839637 &nbsp;·&nbsp; Status: Active</div>
+            <div><span class="text-text">DPS</span> &nbsp;·&nbsp; B12668001 (Texas)</div>
+            <div><span class="text-text">Incorporation</span> &nbsp;·&nbsp; 05/01/2025</div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 space-y-3">
+          <a href="#"
+            class="group flex items-center justify-between gap-6 border border-line bg-surface p-6 lg:p-7 card-hover">
+            <div class="flex items-center gap-6">
+              <div
+                class="w-14 h-14 border border-line flex items-center justify-center text-mute2 group-hover:text-accent group-hover:border-accent transition-colors">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <path d="M14 2v6h6" />
+                </svg>
+              </div>
+              <div>
+                <div class="serif text-2xl">Corporate Capability Brochure</div>
+                <div class="mono text-xs text-mute mt-1">SSM-CAP-2025 · 4.2MB · PDF</div>
+              </div>
+            </div>
+            <div class="arrow-link text-text">Download
+              <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+              </svg>
+            </div>
+          </a>
+          <a href="#"
+            class="group flex items-center justify-between gap-6 border border-line bg-surface p-6 lg:p-7 card-hover">
+            <div class="flex items-center gap-6">
+              <div
+                class="w-14 h-14 border border-line flex items-center justify-center text-mute2 group-hover:text-accent group-hover:border-accent transition-colors">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <path d="M14 2v6h6" />
+                </svg>
+              </div>
+              <div>
+                <div class="serif text-2xl">Federal Past Performance Summary</div>
+                <div class="mono text-xs text-mute mt-1">SSM-FPP-0001 · 1.8MB · PDF</div>
+              </div>
+            </div>
+            <div class="arrow-link text-text">Download
+              <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+              </svg>
+            </div>
+          </a>
+          <a href="#"
+            class="group flex items-center justify-between gap-6 border border-line bg-surface p-6 lg:p-7 card-hover">
+            <div class="flex items-center gap-6">
+              <div
+                class="w-14 h-14 border border-line flex items-center justify-center text-mute2 group-hover:text-accent group-hover:border-accent transition-colors">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <path d="M14 2v6h6" />
+                </svg>
+              </div>
+              <div>
+                <div class="serif text-2xl">Licensing &amp; Bonding Packet</div>
+                <div class="mono text-xs text-mute mt-1">SSM-LIC-2025 · 600KB · PDF</div>
+              </div>
+            </div>
+            <div class="arrow-link text-text">Download
+              <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────────
+     SECTION 09 — CONTACT
+     ───────────────────────────────────────────────────────────────── -->
+  <section id="contact" class="relative bg-bg text-text">
+    <div class="absolute inset-0 pattern-ink opacity-60"></div>
+    <div class="relative max-w-[1400px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
+
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+
+        <div class="lg:col-span-5">
+          <div class="mono text-xs tracking-[0.2em] text-accent">§ 09</div>
+          <div class="eyebrow text-text/55 mt-2">Contact</div>
+          <h2 class="serif text-5xl lg:text-7xl mt-4 leading-[0.95] text-text">
+            Let's plan your<br />
+            program <span class="italic">together.</span>
+          </h2>
+          <p class="text-text/70 mt-6 max-w-md leading-relaxed">
+            Free site assessment. Custom proposal in 72 hours. We will tell you honestly when SSM is the right partner —
+            and when you are better served elsewhere.
+          </p>
+
+          <div class="mt-12 space-y-8">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 border border-line/20 flex items-center justify-center text-accent shrink-0">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+              </div>
+              <div>
+                <div class="eyebrow text-text/55">Dispatch (24/7)</div>
+                <div class="serif text-2xl mt-1">(510) 363-9189</div>
+                <div class="text-text/60 text-sm mt-1 mono">Alt · (510) 754-1245</div>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 border border-line/20 flex items-center justify-center text-accent shrink-0">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </div>
+              <div>
+                <div class="eyebrow text-text/55">Email</div>
+                <div class="serif text-2xl mt-1 break-all">ssm@securitysystemsmanagement.us</div>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 border border-line/20 flex items-center justify-center text-accent shrink-0">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </div>
+              <div>
+                <div class="eyebrow text-text/55">Headquarters</div>
+                <div class="serif text-2xl mt-1">350 Winton Avenue</div>
+                <div class="text-text/60 text-sm mt-1 mono">Hayward, California · 94544</div>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 border border-line/20 flex items-center justify-center text-accent shrink-0">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12,6 12,12 16,14" />
+                </svg>
+              </div>
+              <div>
+                <div class="eyebrow text-text/55">Office Hours</div>
+                <div class="serif text-2xl mt-1">Mon — Fri · 08:00 — 17:00</div>
+                <div class="text-text/60 text-sm mt-1 mono">Dispatch on-call beyond office hours</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <form class="lg:col-span-7 lg:pl-8 lg:border-l border-line/10">
+          <div class="flex items-center justify-between mb-10">
+            <span class="eyebrow text-text/55">Request a Proposal</span>
+            <span class="mono text-xs text-text/40">Avg. response · 72 hrs</span>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-x-8 gap-y-2">
+            <div>
+              <label class="eyebrow text-text/55">First Name</label>
+              <input class="field field-dark mt-1" type="text" placeholder="Jordan" />
+            </div>
+            <div>
+              <label class="eyebrow text-text/55">Last Name</label>
+              <input class="field field-dark mt-1" type="text" placeholder="Reyes" />
+            </div>
+            <div>
+              <label class="eyebrow text-text/55">Email</label>
+              <input class="field field-dark mt-1" type="email" placeholder="jordan@company.com" required />
+            </div>
+            <div>
+              <label class="eyebrow text-text/55">Phone</label>
+              <input class="field field-dark mt-1" type="tel" placeholder="(555) 000-0000" />
+            </div>
+            <div class="sm:col-span-2">
+              <label class="eyebrow text-text/55">Organization</label>
+              <input class="field field-dark mt-1" type="text" placeholder="Company / Agency" />
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <label class="eyebrow text-text/55">Service Required</label>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <label
+                class="border border-line/20 px-3 py-2 text-sm cursor-pointer hover:border-accent transition-colors flex items-center gap-2">
+                <input type="checkbox" class="accent-sky-500" /> Unarmed Officers
+              </label>
+              <label
+                class="border border-line/20 px-3 py-2 text-sm cursor-pointer hover:border-accent transition-colors flex items-center gap-2">
+                <input type="checkbox" class="accent-sky-500" /> Mobile Patrol
+              </label>
+              <label
+                class="border border-line/20 px-3 py-2 text-sm cursor-pointer hover:border-accent transition-colors flex items-center gap-2">
+                <input type="checkbox" class="accent-sky-500" /> Surveillance
+              </label>
+              <label
+                class="border border-line/20 px-3 py-2 text-sm cursor-pointer hover:border-accent transition-colors flex items-center gap-2">
+                <input type="checkbox" class="accent-sky-500" /> Facilities Mgmt
+              </label>
+              <label
+                class="border border-line/20 px-3 py-2 text-sm cursor-pointer hover:border-accent transition-colors flex items-center gap-2">
+                <input type="checkbox" class="accent-sky-500" /> Investigations
+              </label>
+              <label
+                class="border border-line/20 px-3 py-2 text-sm cursor-pointer hover:border-accent transition-colors flex items-center gap-2">
+                <input type="checkbox" class="accent-sky-500" /> Other
+              </label>
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <label class="eyebrow text-text/55">Project Brief</label>
+            <textarea rows="4" class="field field-dark mt-1"
+              placeholder="Tell us about the site, the schedule and the outcomes you expect."></textarea>
+          </div>
+
+          <div class="mt-10 flex flex-wrap items-center justify-between gap-6">
+            <p class="text-xs text-text/45 max-w-md leading-relaxed">
+              By submitting, you agree to SSM contacting you about your request. SMS opt-in is never shared with third
+              parties for marketing.
+            </p>
+            <button type="button" class="btn btn-brass">Submit Request
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────────
+     MAP
+     ───────────────────────────────────────────────────────────────── -->
+  <section class="relative h-[420px] bg-surface2 border-t border-line/10">
+    <iframe title="SSM HQ — Hayward, CA"
+      src="https://maps.google.com/maps?q=350%20Winton%20Avenue,%20Hayward,%20California%2094544&t=&z=14&ie=UTF8&iwloc=&output=embed"
+      class="absolute inset-0 w-full h-full opacity-80" style="border:0; filter: grayscale(1) contrast(1.1);"
+      loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="absolute top-6 left-6 lg:top-10 lg:left-10 bg-bg text-text p-6 max-w-xs border border-line/15">
+      <div class="eyebrow text-accent">SSM Inc. · Headquarters</div>
+      <div class="serif text-2xl mt-2">350 Winton Avenue</div>
+      <div class="mono text-xs text-text/60 mt-1">Hayward, California · 94544</div>
+      <a href="https://maps.google.com/?q=350+Winton+Avenue,+Hayward,+CA" target="_blank" rel="noopener"
+        class="arrow-link mt-4 text-text">Open in Maps
+        <svg class="arr" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M13 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────────
+     FOOTER
+     ───────────────────────────────────────────────────────────────── -->
+  <footer class="bg-bg text-text">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-10 pt-20 pb-10">
+
+      <!-- big mark + tagline -->
+      <div class="grid lg:grid-cols-12 gap-10 pb-16 border-b border-line/10">
+        <div class="lg:col-span-7">
+          <div class="serif text-[80px] sm:text-[120px] lg:text-[160px] leading-[0.85] tracking-tightest">
+            SSM<span class="text-accent">.</span>
+          </div>
+          <p class="mt-6 max-w-md text-text/65 leading-relaxed">
+            Licensed protective services &amp; facilities management. Government, commercial, industrial &amp;
+            residential. Operating since 2013.
+          </p>
+        </div>
+
+        <div class="lg:col-span-5 grid grid-cols-2 gap-10">
+          <div>
+            <div class="eyebrow text-text/55 mb-5">Sitemap</div>
+            <ul class="space-y-2.5 text-sm">
+              <li><a href="#services" class="text-text/80 hover:text-accent transition-colors">Services</a></li>
+              <li><a href="#sectors" class="text-text/80 hover:text-accent transition-colors">Sectors</a></li>
+              <li><a href="#about" class="text-text/80 hover:text-accent transition-colors">About</a></li>
+              <li><a href="#coverage" class="text-text/80 hover:text-accent transition-colors">Coverage</a></li>
+              <li><a href="#academy" class="text-text/80 hover:text-accent transition-colors">Academy</a></li>
+              <li><a href="#careers" class="text-text/80 hover:text-accent transition-colors">Careers</a></li>
+              <li><a href="#government" class="text-text/80 hover:text-accent transition-colors">Government</a></li>
+              <li><a href="#contact" class="text-text/80 hover:text-accent transition-colors">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="eyebrow text-text/55 mb-5">Reach Us</div>
+            <ul class="space-y-3 text-sm text-text/80">
+              <li><a href="tel:5103639189" class="hover:text-accent transition-colors">(510) 363-9189</a></li>
+              <li><a href="tel:5107541245" class="hover:text-accent transition-colors">(510) 754-1245</a></li>
+              <li><a href="mailto:ssm@securitysystemsmanagement.us"
+                  class="hover:text-accent transition-colors break-all">ssm@securitysystemsmanagement.us</a></li>
+              <li class="text-text/65 pt-2">350 Winton Avenue<br />Hayward, CA 94544</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- bottom row -->
+      <div class="pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <p class="text-text/55 text-xs mono">© 2013 — <span id="year">2026</span> Security Systems Management Inc. · All
+          rights reserved.</p>
+        <div class="flex items-center gap-6 text-text/55 text-xs">
+          <a href="#" class="hover:text-accent transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-accent transition-colors">Licensing</a>
+          <a href="#" class="hover:text-accent transition-colors">SMS Terms</a>
+          <span class="hidden md:inline">·</span>
+          <span class="hidden md:inline mono">CA BSIS · TX DPS · VA SCC</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // mobile menu
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    if (btn && menu) {
+      btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.add('hidden')));
+    }
+
+    // current year
+    const y = document.getElementById('year');
+    if (y) y.textContent = new Date().getFullYear();
+
+    // reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
+
+</html>
