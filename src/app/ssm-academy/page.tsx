@@ -37,7 +37,7 @@ export default function SSMAcademyPage() {
     const rect = canvas.getBoundingClientRect();
     canvas.width = rect.width;
     canvas.height = rect.height;
-    ctx.strokeStyle = "#0EA5E9"; // sky-blue theme color!
+    ctx.strokeStyle = "#D4AF37"; // gold theme color!
     ctx.lineWidth = 2.5;
     ctx.lineCap = "round";
   }, []);
@@ -177,6 +177,11 @@ export default function SSMAcademyPage() {
                   </div>
                 </li>
               </ul>
+            </div>
+
+            {/* Image Placeholder */}
+            <div className="image-placeholder h-64 sm:h-[300px]">
+              <span>Image Placeholder (1200x600)</span>
             </div>
 
             {/* ─────────────────────────────────────────────────────────────────

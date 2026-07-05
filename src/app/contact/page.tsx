@@ -37,6 +37,17 @@ export default function ContactPage() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────────────
+           OFFICE IMAGE PLACEHOLDER
+           ───────────────────────────────────────────────────────────────── */}
+      <section className="bg-bg border-b border-line/15">
+        <div className="max-w-5xl mx-auto px-6 lg:px-10 py-10">
+          <div className="image-placeholder h-64 sm:h-[320px]">
+            <span>Image Placeholder — SSM Office / Team Photo (1400x600)</span>
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────────────────────────────────────────────────────────
            GET IN TOUCH & QUOTE FORM
            ───────────────────────────────────────────────────────────────── */}
       <Section className="bg-bg border-b border-line/15">

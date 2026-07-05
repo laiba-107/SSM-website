@@ -42,6 +42,9 @@ export default function ServicesPage() {
             <p className="text-mute leading-relaxed font-normal text-lg">
               We specialize in deploying highly trained and qualified unarmed security guards, loss prevention specialists, and undercover corporate officers. Over the last 12 years, SSM Inc. has designed top-tier security programs and consultations. Our dedicated management workforce maintains deep expertise, ensuring your property is continuously monitored and secured.
             </p>
+            <div className="mt-10 image-placeholder h-80 sm:h-[400px]">
+              <span>Image Placeholder (1200x800)</span>
+            </div>
           </div>
 
           {/* Capabilities card */}

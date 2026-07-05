@@ -29,6 +29,17 @@ export default function GovernmentPage() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────────────
+           GOVERNMENT BANNER IMAGE
+           ───────────────────────────────────────────────────────────────── */}
+      <section className="bg-bg border-b border-line/15">
+        <div className="max-w-3xl mx-auto px-6 lg:px-10 py-10">
+          <div className="image-placeholder h-56 sm:h-72">
+            <span>Image Placeholder — Federal Building / Capitol (1200x500)</span>
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────────────────────────────────────────────────────────
            CAPABILITY LINKS
            ───────────────────────────────────────────────────────────────── */}
       <Section className="bg-bg border-b border-line/15 min-h-[50vh]">

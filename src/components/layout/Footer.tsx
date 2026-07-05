@@ -58,7 +58,7 @@ export function Footer() {
             <Link href="/about#license" className="hover:text-accent transition-colors">Licensing</Link>
             <Link href="/about#sms-terms" className="hover:text-accent transition-colors">SMS Terms</Link>
             <span className="hidden md:inline text-mute/30">·</span>
-            <span className="mono uppercase tracking-[0.1em] text-[10px]">CA BSIS · TX DPS · VA SCC</span>
+            <span className="mono uppercase tracking-[0.1em] text-[10px] text-accent">CA BSIS · TX DPS · VA SCC</span>
           </div>
         </div>
       </div>

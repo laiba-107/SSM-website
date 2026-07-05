@@ -44,6 +44,10 @@ export default function AboutPage() {
                 As a minority-owned enterprise, SSM Inc. offers the precision and experience needed to align with strict client requirements, boasting corporate scalability to handle any deployment size. We maintain continuous 24 hours a day, 7 days a week operations including patrol routes, remote monitoring, and tactical tracking. Our security architects craft custom surveillance, deployment maps, and facilities management schedules uniquely customized for every location.
               </p>
             </div>
+            
+            <div className="mt-10 image-placeholder h-80 sm:h-[400px]">
+              <span>Image Placeholder (1200x800)</span>
+            </div>
           </div>
         </Container>
       </Section>

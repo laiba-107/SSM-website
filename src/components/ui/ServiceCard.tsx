@@ -16,22 +16,22 @@ export function ServiceCard({ title, description, icon, href, className }: Servi
     <Link 
       href={href}
       className={cn(
-        "group relative flex flex-col justify-between overflow-hidden rounded-xl glass-effect premium-card p-8",
+        "group relative flex flex-col justify-between overflow-hidden rounded-xl glass-card p-8",
         className
       )}
     >
       <div>
-        <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary-light/50 text-gold-main border border-white/5 group-hover:scale-115 transition-all duration-300 group-hover:border-gold-main/20">
-          {icon}
+        <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-full bg-surface2/50 border border-line/30 group-hover:border-accent/50 group-hover:bg-accent/10 transition-colors duration-300">
+          <div className="text-accent group-hover:scale-110 transition-transform">{icon}</div>
         </div>
-        <h3 className="mb-3 text-xl font-semibold text-foreground heading-premium group-hover:text-gold-main transition-colors">
+        <h3 className="mb-4 text-2xl font-serif text-text group-hover:text-gradient-gold transition-colors">
           {title}
         </h3>
-        <p className="text-muted leading-relaxed mb-6 font-light">
+        <p className="text-mute text-sm leading-relaxed mb-6 font-light">
           {description}
         </p>
       </div>
-      <div className="mt-auto flex items-center text-sm font-medium text-gold-main group-hover:text-white transition-colors duration-200">
+      <div className="mt-auto flex items-center text-sm font-semibold text-accent uppercase tracking-wider group-hover:text-accentL transition-colors duration-200">
         Learn more <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
       </div>
     </Link>
