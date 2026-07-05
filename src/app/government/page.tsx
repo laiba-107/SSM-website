@@ -92,26 +92,26 @@ export default function GovernmentPage() {
             </div>
 
             {/* Procurement Detail Box */}
-            <div className="card-premium grid sm:grid-cols-2 gap-8 text-sm text-mute font-normal">
+            <div className="card-premium grid sm:grid-cols-2 gap-10 !border-accent/60 hover:!border-accent shadow-[0_0_15px_rgba(212,175,55,0.1)] bg-surface relative">
               <div>
-                <h4 className="text-base font-semibold text-text mb-2 flex items-center gap-2 font-serif">
-                  <Shield width="16" height="16" className="text-accent" />
+                <h4 className="text-xl sm:text-2xl font-bold text-text mb-4 flex items-center gap-3 font-serif">
+                  <Shield width="24" height="24" className="text-accent" />
                   NAICS Codes
                 </h4>
-                <p className="font-normal text-mute text-xs mb-2">SSM Inc. operates primarily under the following North American Industry Classification System identifiers:</p>
-                <ul className="list-disc pl-5 mt-2 space-y-1 font-mono text-xs text-text font-normal">
+                <p className="font-normal text-mute text-sm sm:text-base mb-5">SSM Inc. operates primarily under the following North American Industry Classification System identifiers:</p>
+                <ul className="list-disc pl-6 mt-3 space-y-3 font-mono text-sm sm:text-base text-text font-medium">
                   <li>561612 — Protective Guard Services</li>
                   <li>561611 — Investigation Services</li>
                   <li>561621 — Security Systems Services</li>
                 </ul>
               </div>
               <div>
-                <h4 className="text-base font-semibold text-text mb-2 flex items-center gap-2 font-serif">
-                  <Shield width="16" height="16" className="text-accent" />
+                <h4 className="text-xl sm:text-2xl font-bold text-text mb-4 flex items-center gap-3 font-serif">
+                  <Shield width="24" height="24" className="text-accent" />
                   Corporate Identification
                 </h4>
-                <p className="font-normal text-mute text-xs mb-2">Verify active registrations or retrieve details for municipal bid listings:</p>
-                <ul className="list-disc pl-5 mt-2 space-y-1 font-mono text-xs text-text font-normal">
+                <p className="font-normal text-mute text-sm sm:text-base mb-5">Verify active registrations or retrieve details for municipal bid listings:</p>
+                <ul className="list-disc pl-6 mt-3 space-y-3 font-mono text-sm sm:text-base text-text font-medium">
                   <li>DUNS &nbsp;·&nbsp; 07-849-0639</li>
                   <li>CAGE &nbsp;·&nbsp; 7Y6D1</li>
                   <li>Minority Owned Business Enterprise (MBE)</li>

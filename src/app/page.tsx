@@ -114,29 +114,29 @@ export default function Home() {
       {/* ─────────────────────────────────────────────────────────────────
            CLIENT LOGO MARQUEE (Post-Hero)
            ───────────────────────────────────────────────────────────────── */}
-      <section className="bg-bg py-8 border-b border-line/15 relative z-10">
+      <section className="bg-accent py-12 border-y border-accent/20 relative z-10">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          <div className="flex flex-col md:flex-row md:items-center gap-6 mb-6 reveal-up">
-            <span className="eyebrow text-mute2">Trusted By Leading Organizations</span>
-            <span className="h-px flex-1 bg-line/20 hidden md:block"></span>
+          <div className="flex flex-col md:flex-row md:items-center gap-6 mb-10 reveal-up">
+            <h2 className="text-xl md:text-2xl font-bold uppercase tracking-[0.15em] text-bg">Trusted By Leading Organizations</h2>
+            <span className="h-px flex-1 bg-bg/30 hidden md:block"></span>
           </div>
           <div className="relative overflow-hidden reveal-up" style={{ transitionDelay: "100ms" }}>
-            <div className="marquee-track flex items-center gap-16 lg:gap-24 whitespace-nowrap opacity-60 hover:opacity-100 transition-opacity duration-500">
-              <span className="serif text-2xl lg:text-3xl text-text">Enterprise Rent-A-Car</span><span className="text-accent text-2xl">·</span>
-              <span className="mono uppercase tracking-[0.25em] text-text text-sm">NOAA</span><span className="text-accent text-2xl">·</span>
-              <span className="serif text-2xl lg:text-3xl text-text">Sheraton</span><span className="text-accent text-2xl">·</span>
-              <span className="text-text text-sm font-semibold tracking-wider">ALAMEDA POINT</span><span className="text-accent text-2xl">·</span>
-              <span className="serif text-2xl lg:text-3xl text-text">BAART Programs</span><span className="text-accent text-2xl">·</span>
-              <span className="mono uppercase tracking-[0.25em] text-text text-sm">U.S. Dept. of Commerce</span><span className="text-accent text-2xl">·</span>
-              <span className="serif text-2xl lg:text-3xl text-text">City of Hayward</span><span className="text-accent text-2xl">·</span>
+            <div className="marquee-track flex items-center gap-16 lg:gap-24 whitespace-nowrap opacity-80 hover:opacity-100 transition-opacity duration-500">
+              <span className="serif text-2xl lg:text-3xl text-bg">Enterprise Rent-A-Car</span><span className="text-bg/50 text-2xl">·</span>
+              <span className="mono uppercase tracking-[0.25em] text-bg text-sm">NOAA</span><span className="text-bg/50 text-2xl">·</span>
+              <span className="serif text-2xl lg:text-3xl text-bg">Sheraton</span><span className="text-bg/50 text-2xl">·</span>
+              <span className="text-bg text-sm font-semibold tracking-wider">ALAMEDA POINT</span><span className="text-bg/50 text-2xl">·</span>
+              <span className="serif text-2xl lg:text-3xl text-bg">BAART Programs</span><span className="text-bg/50 text-2xl">·</span>
+              <span className="mono uppercase tracking-[0.25em] text-bg text-sm">U.S. Dept. of Commerce</span><span className="text-bg/50 text-2xl">·</span>
+              <span className="serif text-2xl lg:text-3xl text-bg">City of Hayward</span><span className="text-bg/50 text-2xl">·</span>
               {/* Duplicate for infinite scroll */}
-              <span className="serif text-2xl lg:text-3xl text-text">Enterprise Rent-A-Car</span><span className="text-accent text-2xl">·</span>
-              <span className="mono uppercase tracking-[0.25em] text-text text-sm">NOAA</span><span className="text-accent text-2xl">·</span>
-              <span className="serif text-2xl lg:text-3xl text-text">Sheraton</span><span className="text-accent text-2xl">·</span>
-              <span className="text-text text-sm font-semibold tracking-wider">ALAMEDA POINT</span><span className="text-accent text-2xl">·</span>
-              <span className="serif text-2xl lg:text-3xl text-text">BAART Programs</span><span className="text-accent text-2xl">·</span>
-              <span className="mono uppercase tracking-[0.25em] text-text text-sm">U.S. Dept. of Commerce</span><span className="text-accent text-2xl">·</span>
-              <span className="serif text-2xl lg:text-3xl text-text">City of Hayward</span>
+              <span className="serif text-2xl lg:text-3xl text-bg">Enterprise Rent-A-Car</span><span className="text-bg/50 text-2xl">·</span>
+              <span className="mono uppercase tracking-[0.25em] text-bg text-sm">NOAA</span><span className="text-bg/50 text-2xl">·</span>
+              <span className="serif text-2xl lg:text-3xl text-bg">Sheraton</span><span className="text-bg/50 text-2xl">·</span>
+              <span className="text-bg text-sm font-semibold tracking-wider">ALAMEDA POINT</span><span className="text-bg/50 text-2xl">·</span>
+              <span className="serif text-2xl lg:text-3xl text-bg">BAART Programs</span><span className="text-bg/50 text-2xl">·</span>
+              <span className="mono uppercase tracking-[0.25em] text-bg text-sm">U.S. Dept. of Commerce</span><span className="text-bg/50 text-2xl">·</span>
+              <span className="serif text-2xl lg:text-3xl text-bg">City of Hayward</span>
             </div>
           </div>
         </div>
@@ -305,8 +305,7 @@ export default function Home() {
       {/* ─────────────────────────────────────────────────────────────────
            CTA BANNER
            ───────────────────────────────────────────────────────────────── */}
-      <section className="relative py-20 z-10 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-gold opacity-90"></div>
+      <section className="relative py-20 z-10 overflow-hidden bg-accent">
         <div className="absolute inset-0 pattern-grid opacity-20 mix-blend-overlay"></div>
         
         <div className="relative max-w-4xl mx-auto px-6 text-center z-10 reveal-up">
