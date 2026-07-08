@@ -25,12 +25,15 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-bg/60 via-bg/80 to-bg"></div>
           <div className="absolute inset-0 pattern-grid opacity-20"></div>
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-bg to-transparent"></div>
+          {/* Gold accent radial glow */}
+          <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 70% 60% at 60% 50%, rgba(212,175,55,0.13) 0%, rgba(212,175,55,0.04) 50%, transparent 80%)" }}></div>
+          <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full" style={{ background: "radial-gradient(circle, rgba(212,175,55,0.08) 0%, transparent 70%)", filter: "blur(60px)" }}></div>
         </div>
 
         <div className="relative max-w-[1400px] w-full mx-auto px-6 lg:px-10 z-10 flex flex-col pt-10 -mt-16 sm:-mt-24">
           
           <div className="grid lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-8 reveal-up visible">
+            <div className="lg:col-span-7 reveal-up visible">
               
               <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-line/30 bg-surface/40 backdrop-blur-md mb-4">
                 <span className="relative flex h-2 w-2">
@@ -40,7 +43,7 @@ export default function Home() {
                 <span className="text-xs font-mono uppercase tracking-widest text-text/80">Licensed & Bonded · 24/7 Operations</span>
               </div>
 
-              <h1 className="serif text-[56px] sm:text-[80px] lg:text-[120px] leading-[1.0] text-text drop-shadow-2xl font-bold">
+              <h1 className="serif text-[56px] sm:text-[80px] lg:text-[100px] leading-[1.0] text-text drop-shadow-2xl font-bold">
                 To protect with <em className="text-accent not-italic font-serif">courage.</em><br />
                 To serve with <em className="text-accent not-italic font-serif">compassion.</em>
               </h1>
@@ -66,6 +69,36 @@ export default function Home() {
                     <span className="serif text-xl">(510) 363-9189</span>
                   </div>
                 </a>
+              </div>
+            </div>
+
+            {/* Security Officer Image — right side */}
+            <div className="hidden lg:flex lg:col-span-5 items-end justify-center relative reveal-up visible" style={{ transitionDelay: "200ms" }}>
+              {/* Gold ambient glow behind image */}
+              <div className="absolute inset-0 rounded-3xl" style={{ background: "radial-gradient(ellipse 80% 70% at 50% 80%, rgba(212,175,55,0.25) 0%, rgba(212,175,55,0.08) 50%, transparent 75%)", filter: "blur(30px)" }}></div>
+              {/* Corner accent lines */}
+              <div className="absolute top-4 right-4 w-16 h-16 border-t-2 border-r-2 border-accent/50 rounded-tr-xl"></div>
+              <div className="absolute bottom-4 left-4 w-16 h-16 border-b-2 border-l-2 border-accent/50 rounded-bl-xl"></div>
+              <div className="relative w-full max-w-[420px] h-[580px] rounded-2xl overflow-hidden border border-accent/20 shadow-[0_0_60px_rgba(212,175,55,0.15)]">
+                <Image
+                  src="/hero-officer.png"
+                  alt="SSM Professional Security Officer"
+                  fill
+                  priority
+                  className="object-cover object-top"
+                />
+                {/* Subtle gradient overlay at bottom */}
+                <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-bg/80 to-transparent"></div>
+                {/* Badge overlay */}
+                <div className="absolute bottom-6 left-6 right-6 glass-effect rounded-xl px-5 py-4 flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-full bg-accent/20 border border-accent/40 flex items-center justify-center shrink-0">
+                    <Shield className="w-5 h-5 text-accent" />
+                  </div>
+                  <div>
+                    <div className="mono text-[10px] uppercase tracking-widest text-accent font-bold">SSM Certified Officer</div>
+                    <div className="text-text text-sm font-medium mt-0.5">Fully Licensed · BSIS · CA</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
