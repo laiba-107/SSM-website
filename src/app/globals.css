@@ -186,6 +186,25 @@ p, li, span, label {
   background: linear-gradient(135deg, var(--accent) 0%, var(--accentL) 100%);
 }
 
+.section-gold-accent {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-gold-accent::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(212,175,55,0.16), rgba(212,175,55,0.05) 45%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section-gold-accent > * {
+  position: relative;
+  z-index: 1;
+}
+
 .bg-gradient-blue {
   background: linear-gradient(135deg, var(--blue) 0%, var(--blueL) 100%);
 }
