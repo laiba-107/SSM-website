@@ -45,6 +45,8 @@
   /* Gold Accents — darker in light mode for visibility */
   --accent: #92670A;
   --accentL: #B07D12;
+  --accent-rgb: 146, 103, 10;
+  --accentL-rgb: 176, 125, 18;
 
   /* Trust Blue Accents */
   --blue: #1E40AF;
@@ -70,6 +72,8 @@
   /* Gold Accents — bright in dark mode */
   --accent: #D4AF37;
   --accentL: #E8C547;
+  --accent-rgb: 212, 175, 55;
+  --accentL-rgb: 232, 197, 71;
 
   --accent-dot: rgba(212, 175, 55, 0.10);
   --neutral-dot: rgba(255, 255, 255, 0.03);
@@ -169,7 +173,7 @@ p, li, span, label {
 }
 .card-premium:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px -5px rgba(212, 175, 55, 0.08);
+  box-shadow: 0 10px 30px -5px rgba(var(--accent-rgb), 0.08);
   border-color: var(--accent);
 }
 
@@ -195,7 +199,7 @@ p, li, span, label {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(212,175,55,0.16), rgba(212,175,55,0.05) 45%, transparent 100%);
+  background: linear-gradient(135deg, rgba(var(--accent-rgb),0.16), rgba(var(--accentL-rgb),0.05) 45%, transparent 100%);
   pointer-events: none;
   z-index: 0;
 }
@@ -229,7 +233,7 @@ p, li, span, label {
 }
 .btn-primary:hover {
   background: var(--accentL);
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+  box-shadow: 0 4px 15px rgba(var(--accent-rgb), 0.2);
 }
 .btn-secondary {
   background: var(--blue);
@@ -251,11 +255,11 @@ p, li, span, label {
 .btn-brass {
   background: linear-gradient(135deg, var(--accent) 0%, var(--accentL) 100%);
   color: var(--bg);
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15);
+  box-shadow: 0 4px 15px rgba(var(--accent-rgb), 0.15);
 }
 .btn-brass:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 6px 20px rgba(var(--accent-rgb), 0.3);
 }
 
 /* Inputs and Forms */
@@ -283,7 +287,7 @@ p, li, span, label {
   background: rgba(20, 20, 20, 0.6);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 2px solid rgba(212, 175, 55, 0.3);
+  border: 2px solid rgba(var(--accent-rgb), 0.3);
 }
 
 .glass-card {
@@ -297,11 +301,11 @@ p, li, span, label {
   background: rgba(20, 20, 20, 0.6);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 2px solid rgba(212, 175, 55, 0.15);
+  border: 2px solid rgba(var(--accent-rgb), 0.15);
 }
 .glass-card:hover {
-  border-color: rgba(212, 175, 55, 0.4);
-  box-shadow: 0 8px 32px -4px rgba(212, 175, 55, 0.12);
+  border-color: rgba(var(--accent-rgb), 0.4);
+  box-shadow: 0 8px 32px -4px rgba(var(--accent-rgb), 0.12);
   transform: translateY(-2px);
 }
 .dark .glass-card:hover {
@@ -384,7 +388,7 @@ html { scroll-behavior: smooth; }
   background: var(--surface);
   border-color: var(--accent);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.2);
+  box-shadow: 0 6px 20px rgba(var(--accent-rgb), 0.2);
 }
 
 /* Marquee animation for client logos */

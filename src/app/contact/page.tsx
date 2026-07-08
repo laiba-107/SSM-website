@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React, { useState } from "react";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
@@ -37,12 +38,18 @@ export default function ContactPage() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────────────
-           OFFICE IMAGE PLACEHOLDER
+           OFFICE IMAGE
            ───────────────────────────────────────────────────────────────── */}
       <section className="bg-bg border-b border-line/15">
         <div className="max-w-5xl mx-auto px-6 lg:px-10 py-10">
-          <div className="image-placeholder h-64 sm:h-[320px]">
-            <span>Image Placeholder — SSM Office / Team Photo (1400x600)</span>
+          <div className="overflow-hidden rounded-3xl border border-line/15 shadow-xl h-64 sm:h-[320px]">
+            <Image
+              src="/contact us.jpg"
+              alt="Contact Security Systems Management team"
+              width={1400}
+              height={600}
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </section>
@@ -192,8 +199,10 @@ export default function ContactPage() {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-xs font-semibold uppercase tracking-wider text-text/75 block">Service Needed</label>
+                    <label htmlFor="service-select" className="text-xs font-semibold uppercase tracking-wider text-text/75 block">Service Needed</label>
                     <select 
+                      id="service-select"
+                      aria-label="Service Needed"
                       value={service}
                       onChange={(e) => setService(e.target.value)}
                       className="field field-dark bg-bg cursor-pointer"

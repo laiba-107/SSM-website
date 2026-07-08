@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
-import { Container } from "@/components/layout/Container";
+import React, { useRef, useState, useEffect } from "react";import Image from "next/image";import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { Check, Trash2, Save, Send } from "lucide-react";
 
@@ -175,9 +174,14 @@ export default function CareerPage() {
               </ul>
             </div>
 
-            {/* Image Placeholder */}
-            <div className="image-placeholder h-64 sm:h-[300px]">
-              <span>Image Placeholder (1200x600)</span>
+            <div className="overflow-hidden rounded-3xl border border-line/15 shadow-xl h-64 sm:h-[300px]">
+              <Image
+                src="/career-training.png"
+                alt="SSM career training session"
+                width={1200}
+                height={600}
+                className="w-full h-full object-cover"
+              />
             </div>
 
             {/* ─────────────────────────────────────────────────────────────────

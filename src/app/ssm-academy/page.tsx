@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef, useState, useEffect } from "react";
+import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { Check, Trash2 } from "lucide-react";
@@ -135,53 +136,62 @@ export default function SSMAcademyPage() {
                 Training Packages
               </h2>
               
-              <ul className="grid gap-4 text-mute font-normal">
-                <li className="flex items-start gap-4 bg-bg/40 p-6 border border-line/15 hover:border-accent/20 transition-all duration-300">
-                  <div className="w-10 h-10 rounded bg-accent/10 border border-accent/20 flex items-center justify-center font-bold text-accent shrink-0 font-mono">
-                    A
+              <div className="grid gap-4">
+                <div className="rounded-3xl bg-accent/10 border border-accent/20 p-6 shadow-lg">
+                  <div className="flex items-center justify-between gap-4 mb-4">
+                    <div className="w-10 h-10 rounded-2xl bg-accent/15 border border-accent/30 flex items-center justify-center font-bold text-accent font-mono">
+                      A
+                    </div>
+                    <span className="text-2xl font-serif font-bold text-text">$97.00</span>
                   </div>
-                  <div>
-                    <span className="font-bold text-text text-lg block mb-1 font-serif">$97.00</span>
-                    <span className="text-mute block text-sm sm:text-base font-normal">Guard Card Training - Two Classes in one day</span>
+                  <p className="text-text font-semibold text-lg mb-2">Guard Card Training</p>
+                  <p className="text-mute text-sm sm:text-base">Two classes in one day with professional academy instruction.</p>
+                </div>
+
+                <div className="rounded-3xl bg-accent/10 border border-accent/20 p-6 shadow-lg">
+                  <div className="flex items-center justify-between gap-4 mb-4">
+                    <div className="w-10 h-10 rounded-2xl bg-accent/15 border border-accent/30 flex items-center justify-center font-bold text-accent font-mono">
+                      B
+                    </div>
+                    <span className="text-2xl font-serif font-bold text-text">$50.00</span>
                   </div>
-                </li>
-                
-                <li className="flex items-start gap-4 bg-bg/40 p-6 border border-line/15 hover:border-accent/20 transition-all duration-300">
-                  <div className="w-10 h-10 rounded bg-accent/10 border border-accent/20 flex items-center justify-center font-bold text-accent shrink-0 font-mono">
-                    B
+                  <p className="text-text font-semibold text-lg mb-2">Employment Readiness Workshop</p>
+                  <p className="text-mute text-sm sm:text-base">Resume creation, interview practice, and career preparation support.</p>
+                </div>
+
+                <div className="rounded-3xl bg-accent/10 border border-accent/20 p-6 shadow-lg">
+                  <div className="flex items-center justify-between gap-4 mb-4">
+                    <div className="w-10 h-10 rounded-2xl bg-accent/15 border border-accent/30 flex items-center justify-center font-bold text-accent font-mono">
+                      C
+                    </div>
+                    <span className="text-2xl font-serif font-bold text-text">Livescan</span>
                   </div>
-                  <div>
-                    <span className="font-bold text-text text-lg block mb-1 font-serif">$50.00</span>
-                    <span className="text-mute block text-sm sm:text-base font-normal">Resume Creation, Interview Practice, Employment Readiness Workshop</span>
+                  <p className="text-text font-semibold text-lg mb-2">Fingerprinting & Background Checks</p>
+                  <p className="text-mute text-sm sm:text-base mb-2">DOJ and FBI fingerprinting and background check with live-scan service.</p>
+                  <span className="text-accent text-xs font-semibold italic font-mono">($32 DOJ, $19 FBI, $35 fingerprinting and live-scan)</span>
+                </div>
+
+                <div className="rounded-3xl bg-accent/10 border border-accent/20 p-6 shadow-lg">
+                  <div className="flex items-center justify-between gap-4 mb-4">
+                    <div className="w-10 h-10 rounded-2xl bg-accent/15 border border-accent/30 flex items-center justify-center font-bold text-accent font-mono">
+                      D
+                    </div>
+                    <span className="text-2xl font-serif font-bold text-text">$25.00</span>
                   </div>
-                </li>
-                
-                <li className="flex items-start gap-4 bg-bg/40 p-6 border border-line/15 hover:border-accent/20 transition-all duration-300">
-                  <div className="w-10 h-10 rounded bg-accent/10 border border-accent/20 flex items-center justify-center font-bold text-accent shrink-0 font-mono">
-                    C
-                  </div>
-                  <div>
-                    <span className="font-bold text-text text-lg block mb-1 font-serif">Livescan Services</span>
-                    <span className="text-mute block text-sm sm:text-base mb-1 font-normal">DOJ and FBI Fingerprinting and Background Check</span>
-                    <span className="text-accent text-xs font-semibold italic block font-mono">($32 DOJ, $19 FBI, $35 Fingerprinting and Live-Scan)</span>
-                  </div>
-                </li>
-                
-                <li className="flex items-start gap-4 bg-bg/40 p-6 border border-line/15 hover:border-accent/20 transition-all duration-300">
-                  <div className="w-10 h-10 rounded bg-accent/10 border border-accent/20 flex items-center justify-center font-bold text-accent shrink-0 font-mono">
-                    D
-                  </div>
-                  <div>
-                    <span className="font-bold text-text text-lg block mb-1 font-serif">$25.00</span>
-                    <span className="text-mute block text-sm sm:text-base font-normal">Processing and mailing package for you</span>
-                  </div>
-                </li>
-              </ul>
+                  <p className="text-text font-semibold text-lg mb-2">Processing & Mailing Package</p>
+                  <p className="text-mute text-sm sm:text-base">Complete processing and mailing support for your training documents and certificates.</p>
+                </div>
+              </div>
             </div>
 
-            {/* Image Placeholder */}
-            <div className="image-placeholder h-64 sm:h-[300px]">
-              <span>Image Placeholder (1200x600)</span>
+            <div className="overflow-hidden rounded-3xl border border-line/15 shadow-xl h-64 sm:h-[300px]">
+              <Image
+                src="/academy-classroom.png"
+                alt="SSM Academy classroom training"
+                width={1200}
+                height={600}
+                className="w-full h-full object-cover"
+              />
             </div>
 
             {/* ─────────────────────────────────────────────────────────────────

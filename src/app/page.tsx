@@ -225,7 +225,7 @@ export default function Home() {
       {/* ─────────────────────────────────────────────────────────────────
            EXPLORE PRACTICE (CARD GRID)
            ───────────────────────────────────────────────────────────────── */}
-      <section id="explore" className="relative bg-bg py-20 lg:py-28 z-10 border-b border-line/15 section-gold-accent">
+      <section id="explore" className="relative bg-accent/10 py-20 lg:py-28 z-10 border-b border-accent/20 section-gold-accent">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 reveal-up">
             <div className="max-w-2xl">

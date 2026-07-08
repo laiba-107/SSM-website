@@ -36,12 +36,12 @@ export function Navbar() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-bg/95 backdrop-blur-xl shadow-md shadow-black/10 border-b border-line/20"
-          : "bg-bg/90 backdrop-blur-lg border-b border-line/10"
+          ? "bg-bg/95 backdrop-blur-xl shadow-md shadow-black/10 border-b border-accent/20"
+          : "bg-bg/90 backdrop-blur-lg border-b border-accent/15"
       )}
     >
       {/* ── Single compact top strip ── */}
-      <div className="border-b border-line/10">
+      <div className="border-b border-accent/15 bg-surface/95">
         <div className="max-w-[1400px] mx-auto px-5 lg:px-10 h-8 flex items-center justify-between text-[10px] text-mute2 tracking-wide">
           <div className="flex items-center gap-2.5">
             <span className="relative flex h-1.5 w-1.5">
@@ -66,7 +66,7 @@ export function Navbar() {
       </div>
 
       {/* ── Main nav row ── */}
-      <nav>
+      <nav className="border-b border-accent/15 bg-surface/95 shadow-sm shadow-black/5">
         <div className="max-w-[1400px] mx-auto px-5 lg:px-10 h-20 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group shrink-0">
@@ -84,7 +84,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop nav links */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-1 border-l border-accent/15 pl-4">
             {navigation.map((item) => {
               const isActive = pathname === item.href;
               return (

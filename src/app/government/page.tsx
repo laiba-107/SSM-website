@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { FileText, Download, Shield } from "lucide-react";
@@ -33,8 +34,14 @@ export default function GovernmentPage() {
            ───────────────────────────────────────────────────────────────── */}
       <section className="bg-bg border-b border-line/15">
         <div className="max-w-3xl mx-auto px-6 lg:px-10 py-10">
-          <div className="image-placeholder h-56 sm:h-72">
-            <span>Image Placeholder — Federal Building / Capitol (1200x500)</span>
+          <div className="overflow-hidden rounded-3xl border border-line/15 shadow-xl h-56 sm:h-72">
+            <Image
+              src="/government-building.png"
+              alt="Government building entrance"
+              width={1200}
+              height={500}
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </section>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import Link from "next/link";
@@ -42,8 +43,14 @@ export default function ServicesPage() {
             <p className="text-mute leading-relaxed font-normal text-lg">
               We specialize in deploying highly trained and qualified unarmed security guards, loss prevention specialists, and undercover corporate officers. Over the last 12 years, SSM Inc. has designed top-tier security programs and consultations. Our dedicated management workforce maintains deep expertise, ensuring your property is continuously monitored and secured.
             </p>
-            <div className="mt-10 image-placeholder h-80 sm:h-[400px]">
-              <span>Image Placeholder (1200x800)</span>
+            <div className="mt-10 overflow-hidden rounded-3xl border border-line/15 shadow-xl">
+              <Image
+                src="/services-patrol.png"
+                alt="Mobile patrol unit"
+                width={1200}
+                height={800}
+                className="w-full h-auto object-cover"
+              />
             </div>
           </div>
 

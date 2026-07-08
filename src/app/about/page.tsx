@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { Shield, Target, Award, Building, FileText, Globe } from "lucide-react";
@@ -45,8 +46,14 @@ export default function AboutPage() {
               </p>
             </div>
             
-            <div className="mt-10 image-placeholder h-80 sm:h-[400px]">
-              <span>Image Placeholder (1200x800)</span>
+            <div className="mt-10 overflow-hidden rounded-3xl border border-line/15 shadow-xl">
+              <Image
+                src="/about-team.png"
+                alt="SSM leadership team"
+                width={1200}
+                height={800}
+                className="w-full h-auto object-cover"
+              />
             </div>
           </div>
         </Container>
